@@ -247,7 +247,7 @@ int main(int argc, char **argv)
     for (i = 0; i < NUM_TLS_CONNECTIONS; i++)
     {
         sock_fd = accept(fd, NULL, NULL);
-        if (rc < 0)
+        if (sock_fd < 0)
         {
             printf("accept failed: %d\n", rc);
             cleanup(ssl, keys, fd, sock_fd);
