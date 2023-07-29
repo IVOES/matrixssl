@@ -1,0 +1,2675 @@
+apps/common/clientconfig.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 18 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+apps/common/clientconfig.c:155:39: style: Variable 'g_clientconfig.loadKeysFromMemory' is reassigned a value before the old one has been used. [redundantAssignment]
+    g_clientconfig.loadKeysFromMemory = 1;
+                                      ^
+apps/common/clientconfig.c:112:39: note: g_clientconfig.loadKeysFromMemory is assigned
+    g_clientconfig.loadKeysFromMemory = 1;
+                                      ^
+apps/common/clientconfig.c:155:39: note: g_clientconfig.loadKeysFromMemory is overwritten
+    g_clientconfig.loadKeysFromMemory = 1;
+                                      ^
+apps/common/load_keys.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+apps/common/load_keys.c:262:21: style: Condition 'CAstreamLen>0' is always true [knownConditionTrueFalse]
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:231:25: note: Assignment 'CAstreamLen=0', assigned value is 0
+    int32 CAstreamLen = 0;
+                        ^
+apps/common/load_keys.c:243:5: note: Compound assignment '+=', assigned value is 33
+    CAstreamLen += sizeof(ecCAFile);
+    ^
+apps/common/load_keys.c:262:21: note: Condition 'CAstreamLen>0' is always true
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:262:21: style: Condition 'CAstreamLen>0' is always true [knownConditionTrueFalse]
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:231:25: note: Assignment 'CAstreamLen=0', assigned value is 0
+    int32 CAstreamLen = 0;
+                        ^
+apps/common/load_keys.c:253:5: note: Compound assignment '+=', assigned value is 32
+    CAstreamLen += sizeof(ecCAFileP256);
+    ^
+apps/common/load_keys.c:254:5: note: Compound assignment '+=', assigned value is 64
+    CAstreamLen += sizeof(ecCAFileP384);
+    ^
+apps/common/load_keys.c:262:21: note: Condition 'CAstreamLen>0' is always true
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:186:14: style: Condition 'NULL==CAstream' is always true [knownConditionTrueFalse]
+    if (NULL == CAstream) {
+             ^
+apps/common/load_keys.c:148:31: note: Assignment 'CAstream=NULL', assigned value is 0
+    unsigned char *CAstream = NULL;
+                              ^
+apps/common/load_keys.c:186:14: note: Condition 'NULL==CAstream' is always true
+    if (NULL == CAstream) {
+             ^
+apps/common/load_keys.c:267:14: style: Condition 'NULL==CAstream' is always true [knownConditionTrueFalse]
+    if (NULL == CAstream) {
+             ^
+apps/common/load_keys.c:230:22: note: Assignment 'CAstream=NULL', assigned value is 0
+    char *CAstream = NULL;
+                     ^
+apps/common/load_keys.c:267:14: note: Condition 'NULL==CAstream' is always true
+    if (NULL == CAstream) {
+             ^
+apps/common/load_keys.c:181:21: style: The comparison 'CAstreamLen > 0' is always false. [knownConditionTrueFalse]
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:149:26: note: 'CAstreamLen' is assigned value '0' here.
+    size_t CAstreamLen = 0;
+                         ^
+apps/common/load_keys.c:181:21: note: The comparison 'CAstreamLen > 0' is always false.
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:262:21: style: The comparison 'CAstreamLen > 0' is always false. [knownConditionTrueFalse]
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:231:25: note: 'CAstreamLen' is assigned value '0' here.
+    int32 CAstreamLen = 0;
+                        ^
+apps/common/load_keys.c:262:21: note: The comparison 'CAstreamLen > 0' is always false.
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:262:21: style: Condition 'CAstreamLen>0' is always true [knownConditionTrueFalse]
+    if (CAstreamLen > 0)
+                    ^
+apps/common/load_keys.c:231:25: note: Assignment 'CAstreamLen=0', assigned value is 0
+    int32 CAstreamLen = 0;
+                        ^
+apps/common/load_keys.c:234:5: note: Compound assignment '+=', assigned value is 35
+    CAstreamLen += sizeof(rsaCAFile);
+    ^
+apps/common/load_keys.c:262:21: note: Condition 'CAstreamLen>0' is always true
+    if (CAstreamLen > 0)
+                    ^
+apps/dtls/dtlsClient.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+apps/dtls/dtlsServer.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 257 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+apps/dtls/dtlsServer.c:1264:0: information: Skipping configuration 'AF_INET6;HAVE_STRUCT_SOCKADDR_STORAGE_SS_FAMILY;USE_DTLS;USE_DTLS_DEBUG_TRACE;USE_X509;USE_PKCS5;USE_MD5;USE_3DES;USE_AES;USE_HMAC_SHA1;USE_PKCS8;USE_SHA512;USE_CERT_PARSE;USE_SHA1;USE_MATRIX_SHA512;__GNUC__' since the value of 'AF_INET6' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    if (addr->ss_family == AF_INET6)
+^
+apps/dtls/dtlsServer.c:909:19: warning: Either the condition '(dtlsCtx=findClient(inaddr))==NULL' is redundant or there is possible null pointer dereference: dtlsCtx. [nullPointerRedundantCheck]
+            ssl = dtlsCtx->ssl;
+                  ^
+apps/dtls/dtlsServer.c:886:48: note: Assuming that condition '(dtlsCtx=findClient(inaddr))==NULL' is not redundant
+            if ((dtlsCtx = findClient(inaddr)) == NULL)
+                                               ^
+apps/dtls/dtlsServer.c:909:19: note: Null pointer dereference
+            ssl = dtlsCtx->ssl;
+                  ^
+apps/dtls/dtlsServer.c:493:20: style: Unused variable: keyValue [unusedVariable]
+    unsigned char *keyValue, *certValue;
+                   ^
+apps/dtls/dtlsServer.c:493:31: style: Unused variable: certValue [unusedVariable]
+    unsigned char *keyValue, *certValue;
+                              ^
+apps/dtls/dtlsServer.c:494:11: style: Unused variable: keyLen [unusedVariable]
+    int32 keyLen, certLen;
+          ^
+apps/dtls/dtlsServer.c:494:19: style: Unused variable: certLen [unusedVariable]
+    int32 keyLen, certLen;
+                  ^
+apps/ssl/client.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 29 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+apps/ssl/client.c:1953:20: style: Condition 'rc<0' is always true [knownConditionTrueFalse]
+            if (rc < 0)
+                   ^
+apps/ssl/client.c:1951:19: note: Assignment 'rc=-1', assigned value is -1
+            rc = -1;
+                  ^
+apps/ssl/client.c:1953:20: note: Condition 'rc<0' is always true
+            if (rc < 0)
+                   ^
+apps/ssl/client.c:1835:11: style: The scope of the variable 'len' can be reduced. [variableScope]
+    short len;
+          ^
+apps/ssl/client.c:1836:10: style: The scope of the variable 'proto' can be reduced. [variableScope]
+    char proto[128];
+         ^
+apps/ssl/client.c:1550:13: style: Variable 'rc' is assigned a value that is never used. [unreadVariable]
+    if ((rc = matrixSslOpen()) < 0)
+            ^
+apps/ssl/client.c:1795:16: style: Unused variable: rc [unusedVariable]
+    int32 len, rc;
+               ^
+apps/ssl/interactiveCommon.c:66:10: style: The scope of the variable 'c' can be reduced. [variableScope]
+    char c;
+         ^
+apps/ssl/interactiveCommon.c:346:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:402:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:561:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:600:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:641:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:694:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:764:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:810:17: style: The scope of the variable 'addr_default' can be reduced. [variableScope]
+    const char *addr_default = "127.0.0.1";
+                ^
+apps/ssl/interactiveCommon.c:843:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:882:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:924:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+apps/ssl/interactiveCommon.c:467:26: style: The scope of the variable 'psk' can be reduced. [variableScope]
+    const unsigned char *psk;
+                         ^
+apps/ssl/interactiveCommon.c:468:26: style: The scope of the variable 'psk_id' can be reduced. [variableScope]
+    const unsigned char *psk_id;
+                         ^
+apps/ssl/interactiveServer.c:220:12: style: Condition 'rc<0' is always false [knownConditionTrueFalse]
+    if (rc < 0)
+           ^
+apps/ssl/interactiveServer.c:213:12: note: Assuming that condition 'rc<0' is not redundant
+    if (rc < 0)
+           ^
+apps/ssl/interactiveServer.c:220:12: note: Condition 'rc<0' is always false
+    if (rc < 0)
+           ^
+apps/ssl/server.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 20 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+apps/ssl/server.c:1738:14: style: Variable 'lfd' is reassigned a value before the old one has been used. [redundantAssignment]
+    if ((lfd = lsocketListen(g_port, &err)) == INVALID_SOCKET)
+             ^
+apps/ssl/server.c:1490:9: note: lfd is assigned
+    lfd = INVALID_SOCKET;
+        ^
+apps/ssl/server.c:1738:14: note: lfd is overwritten
+    if ((lfd = lsocketListen(g_port, &err)) == INVALID_SOCKET)
+             ^
+apps/ssl/server.c:979:44: style:inconclusive: Function 'httpWriteResponse' argument 1 names different: declaration 'conn' definition 'cp'. [funcArgNamesDifferent]
+static int32 httpWriteResponse(httpConn_t *cp)
+                                           ^
+apps/ssl/server.c:186:44: note: Function 'httpWriteResponse' argument 1 names different: declaration 'conn' definition 'cp'.
+static int32 httpWriteResponse(httpConn_t *conn);
+                                           ^
+apps/ssl/server.c:979:44: note: Function 'httpWriteResponse' argument 1 names different: declaration 'conn' definition 'cp'.
+static int32 httpWriteResponse(httpConn_t *cp)
+                                           ^
+apps/ssl/server.c:1935:33: style:inconclusive: Function 'sigsegv_handler' argument 1 names different: declaration 'i' definition 'unused'. [funcArgNamesDifferent]
+static void sigsegv_handler(int unused)
+                                ^
+apps/ssl/server.c:196:33: note: Function 'sigsegv_handler' argument 1 names different: declaration 'i' definition 'unused'.
+static void sigsegv_handler(int i);
+                                ^
+apps/ssl/server.c:1935:33: note: Function 'sigsegv_handler' argument 1 names different: declaration 'i' definition 'unused'.
+static void sigsegv_handler(int unused)
+                                ^
+apps/ssl/server.c:1942:36: style:inconclusive: Function 'sigintterm_handler' argument 1 names different: declaration 'i' definition 'unused'. [funcArgNamesDifferent]
+static void sigintterm_handler(int unused)
+                                   ^
+apps/ssl/server.c:197:36: note: Function 'sigintterm_handler' argument 1 names different: declaration 'i' definition 'unused'.
+static void sigintterm_handler(int i);
+                                   ^
+apps/ssl/server.c:1942:36: note: Function 'sigintterm_handler' argument 1 names different: declaration 'i' definition 'unused'.
+static void sigintterm_handler(int unused)
+                                   ^
+apps/ssl/simpleClient.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 17 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+apps/ssl/simpleClient.c:74:0: information: Skipping configuration 'SERVER_IP_ADDRESS;USE_CLIENT_SIDE_SSL;USE_IDENTITY_CERTIFICATES;USE_RSA;USE_SECP256R1;USE_TLS_1_2;USE_TLS_1_3;USE_TLS_AES_128_GCM_SHA256;USE_TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256;USE_TLS_RSA_WITH_AES_128_GCM_SHA256' since the value of 'SERVER_IP_ADDRESS' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+static const char *ip_address_str = TO_STRING(SERVER_IP_ADDRESS);
+^
+apps/ssl/simpleServerRecvFile.c:222:12: style: Condition 'rc<0' is always false [knownConditionTrueFalse]
+    if (rc < 0)
+           ^
+apps/ssl/simpleServerRecvFile.c:215:12: note: Assuming that condition 'rc<0' is not redundant
+    if (rc < 0)
+           ^
+apps/ssl/simpleServerRecvFile.c:222:12: note: Condition 'rc<0' is always false
+    if (rc < 0)
+           ^
+apps/ssl/simpleServerRecvFile.c:256:9: warning: %zu in format string (no. 1) requires 'size_t' but the argument type is 'unsigned int'. [invalidPrintfArgType_uint]
+        printf("Got Readbuf of len: %zu\n", len);
+        ^
+apps/ssl/simpleServerRecvFile.c:264:9: portability: %zu in format string (no. 1) requires 'size_t' but the argument type is 'ssize_t {aka signed long}'. [invalidPrintfArgType_uint]
+        printf("recv'd %zu bytes\n", nrecv);
+        ^
+apps/ssl/simpleServerRecvFile.c:368:46: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+                nbytes = fwrite(buf, 1, len, fp);
+                                             ^
+apps/ssl/simpleServerRecvFile.c:364:21: note: Assuming that condition '!fp' is not redundant
+                if (!fp)
+                    ^
+apps/ssl/simpleServerRecvFile.c:368:46: note: Null pointer dereference
+                nbytes = fwrite(buf, 1, len, fp);
+                                             ^
+apps/ssl/simpleServerRecvFile.c:373:24: warning: Either the condition '!fp' is redundant or there is possible null pointer dereference: fp. [nullPointerRedundantCheck]
+                fclose(fp);
+                       ^
+apps/ssl/simpleServerRecvFile.c:364:21: note: Assuming that condition '!fp' is not redundant
+                if (!fp)
+                    ^
+apps/ssl/simpleServerRecvFile.c:373:24: note: Null pointer dereference
+                fclose(fp);
+                       ^
+apps/ssl/simpleServerRecvFile.c:266:1: style: Label 'decrypt_more' is not used. [unusedLabel]
+decrypt_more:
+^
+apps/ssl/tlsDtlsServer.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 281 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+core/osdep/POSIX/osdep.c:401:25: style: Variable 'rc' is assigned a value that is never used. [unreadVariable]
+    sanity = retry = rc = readBytes = 0;
+                        ^
+core/osdep/POSIX/osdep.c:516:23: style: Condition 'tracefile==NULL' is always true [knownConditionTrueFalse]
+        if (tracefile == NULL)
+                      ^
+core/osdep/POSIX/osdep.c:508:19: note: Assuming that condition 'tracefile==NULL' is not redundant
+    if (tracefile == NULL)
+                  ^
+core/osdep/POSIX/osdep.c:516:23: note: Condition 'tracefile==NULL' is always true
+        if (tracefile == NULL)
+                      ^
+core/osdep/POSIX/osdep.c:516:23: warning: Identical inner 'if' condition is always true. [identicalInnerCondition]
+        if (tracefile == NULL)
+                      ^
+core/osdep/POSIX/osdep.c:508:19: note: outer condition: tracefile==NULL
+    if (tracefile == NULL)
+                  ^
+core/osdep/POSIX/osdep.c:516:23: note: identical inner condition: tracefile==NULL
+        if (tracefile == NULL)
+                      ^
+core/osdep/POSIX/psLog.c:44:17: style: The scope of the variable 'str' can be reduced. [variableScope]
+    const char *str;
+                ^
+core/osdep/POSIX/psLog.c:268:24: style: The scope of the variable 'psLogfEnvDisabledStr' can be reduced. [variableScope]
+    static const char *psLogfEnvDisabledStr[] =
+                       ^
+core/osdep/POSIX/psLog.c:280:24: style: The scope of the variable 'psLogfEnvEnabledStr' can be reduced. [variableScope]
+    static const char *psLogfEnvEnabledStr[] =
+                       ^
+core/osdep/POSIX/psLog.c:670:10: style: The scope of the variable 'buf' can be reduced. [variableScope]
+    char buf[PS_LOGF_UNIT_MAX_LEN + 20];
+         ^
+core/osdep/POSIX/psLog.c:688:10: style: The scope of the variable 'buf' can be reduced. [variableScope]
+    char buf[PS_LOGF_UNIT_MAX_LEN + 20];
+         ^
+core/osdep/POSIX/psPrnf.c:43:9: style: The scope of the variable 'res2' can be reduced. [variableScope]
+    int res2 = -1;
+        ^
+core/osdep/POSIX/psPrnf.c:156:9: style: The scope of the variable 'res2' can be reduced. [variableScope]
+    int res2 = -1;
+        ^
+core/osdep/POSIX/spal_posix_thread.c:172:0: information: Skipping configuration 'EDEADLOCK' since the value of 'EDEADLOCK' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+        case EDEADLOCK:
+^
+core/osdep/src/runtime.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 17 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+core/osdep/src/runtime.c:128:13: style: Variable 'id' is assigned a value that is never used. [unreadVariable]
+    if ((id = cpu_info[0]) == 0U) {
+            ^
+core/src/cl_basic.c:100:12: style: The scope of the variable 'i' can be reduced. [variableScope]
+    size_t i = 0;
+           ^
+core/src/cl_basic.c:100:14: style: Variable 'i' is assigned a value that is never used. [unreadVariable]
+    size_t i = 0;
+             ^
+core/src/corelib_date.c:81:0: information: Skipping configuration 'Gmtime_r' since the value of 'Gmtime_r' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    tm = Gmtime_r(&time, t);
+^
+core/src/corelib_list.c:53:17: style: The scope of the variable 'tmp' can be reduced. [variableScope]
+    const char *tmp;
+                ^
+core/src/corelib_strings.c:358:25: style: The scope of the variable 'c' can be reduced. [variableScope]
+    unsigned char *end, c, highOrder;
+                        ^
+core/src/corelib_strings.c:418:9: style: The scope of the variable 'ch_xor' can be reduced. [variableScope]
+    int ch_xor;
+        ^
+core/src/psStat.c:403:37: style: Same expression on both sides of '/'. [duplicateExpression]
+    return (psStatItemFloat_t) (0.0 / 0.0);
+                                    ^
+core/src/psStat.c:59:9: style: The scope of the variable 'run_len' can be reduced. [variableScope]
+    int run_len = 0;
+        ^
+core/src/psStat.c:60:9: style: The scope of the variable 'run_start' can be reduced. [variableScope]
+    int run_start = 0;
+        ^
+core/src/psStat.c:262:9: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int rc;
+        ^
+core/src/psStat.c:59:17: style: Variable 'run_len' is assigned a value that is never used. [unreadVariable]
+    int run_len = 0;
+                ^
+core/src/psStat.c:60:19: style: Variable 'run_start' is assigned a value that is never used. [unreadVariable]
+    int run_start = 0;
+                  ^
+core/src/psStat.c:401:0: information: Skipping configuration 'NAN' since the value of 'NAN' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    return (psStatItemFloat_t) NAN;
+^
+core/src/psStat.c:480:9: style: The scope of the variable 'count' can be reduced. [variableScope]
+    int count = 0;
+        ^
+core/src/psStat.c:782:18: style: The scope of the variable 'out2' can be reduced. [variableScope]
+            char out2[100];
+                 ^
+core/src/psStat.c:783:18: style: The scope of the variable 'out3' can be reduced. [variableScope]
+            char out3[100];
+                 ^
+core/src/psStat.c:803:31: style: Local variable 's' shadows outer variable [shadowVariable]
+                        char *s;
+                              ^
+core/src/psStat.c:784:23: note: Shadowed declaration
+            psStat_t *s;
+                      ^
+core/src/psStat.c:803:31: note: Shadow variable
+                        char *s;
+                              ^
+core/src/psStat.c:930:38: style: Local variable 'event' shadows outer variable [shadowVariable]
+                        psStatItem_t event = sts->events[i][l];
+                                     ^
+core/src/psStat.c:912:30: note: Shadowed declaration
+                psStatItem_t event = sts->events[i][l];
+                             ^
+core/src/psStat.c:930:38: note: Shadow variable
+                        psStatItem_t event = sts->events[i][l];
+                                     ^
+core/src/psStat.c:907:18: style: Unused variable: out2 [unusedVariable]
+            char out2[100];
+                 ^
+core/src/psUtil.c:161:0: information: Skipping configuration 'PTHREAD_MUTEX_INITIALIZER;USE_MULTITHREADING' since the value of 'PTHREAD_MUTEX_INITIALIZER' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    static pthread_mutex_t once_mutex = PTHREAD_MUTEX_INITIALIZER;
+^
+core/src/psmalloc_ext.c:45:11: style: The scope of the variable 'ptr' can be reduced. [variableScope]
+    void *ptr;
+          ^
+core/src/psprintf.c:135:9: style: Variable 'max' is assigned a value that is never used. [unreadVariable]
+    max = arg->max;
+        ^
+core/src/psprintf.c:143:9: style: Variable 'max' is assigned a value that is never used. [unreadVariable]
+    max -= arg->max;
+        ^
+core/src/psprintf.c:230:9: style: Variable 'max' is assigned a value that is never used. [unreadVariable]
+    max = arg->max;
+        ^
+core/src/psprintf.c:238:9: style: Variable 'max' is assigned a value that is never used. [unreadVariable]
+    max -= arg->max;
+        ^
+core/src/sfzclmalloc.c:62:17: style: The scope of the variable 'str' can be reduced. [variableScope]
+    const char *str;
+                ^
+core/src/sfzclstr.c:1056:14: style: The scope of the variable 'x' can be reduced. [variableScope]
+    uint16_t x, y, d;
+             ^
+core/src/sfzclstr.c:1056:20: style: The scope of the variable 'd' can be reduced. [variableScope]
+    uint16_t x, y, d;
+                   ^
+core/src/sfzclstr.c:1690:12: style: The scope of the variable 'i' can be reduced. [variableScope]
+    size_t i;
+           ^
+core/src/sfzclstr.c:1754:12: style: The scope of the variable 'i' can be reduced. [variableScope]
+    size_t i;
+           ^
+core/src/sl_cpu.c:353:0: information: Skipping configuration '_SC_LEVEL1_DCACHE_LINESIZE;__linux__;__aarch32__;__aarch64__;__arm__' since the value of '_SC_LEVEL1_DCACHE_LINESIZE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly. [ConfigurationNotChecked]
+    SL_cacheLineSize = Sysconf(_SC_LEVEL1_DCACHE_LINESIZE);
+^
+core/src/sl_cpu.c:252:9: error: Code 'std::string' is invalid C code. Use --std or --language to configure the language. [syntaxError]
+        std::string machine(systemInfo.machine);
+        ^
+core/src/utils.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 21 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+core/src/utils.c:300:18: style: The scope of the variable 'x' can be reduced. [variableScope]
+    unsigned int x;
+                 ^
+core/src/utils.c:301:18: style: The scope of the variable 'b' can be reduced. [variableScope]
+    int          b;
+                 ^
+core/src/utils.c:302:18: style: The scope of the variable 'c' can be reduced. [variableScope]
+    int          c;
+                 ^
+core/src/utils.c:331:19: style: The scope of the variable 'c' can be reduced. [variableScope]
+    unsigned char c;
+                  ^
+core/src/utils.c:333:19: style: The scope of the variable 'c_alpha0' can be reduced. [variableScope]
+    unsigned char c_alpha0, c_alpha;
+                  ^
+core/src/utils.c:334:19: style: The scope of the variable 'c_num0' can be reduced. [variableScope]
+    unsigned char c_num0, c_num;
+                  ^
+core/src/utils.c:491:5: style:inconclusive: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+    Abort();
+    ^
+core/testsupp/src/sfzutf/sfzutf-perf.c:155:14: style: The scope of the variable 'delta' can be reduced. [variableScope]
+    uint64_t delta;
+             ^
+core/testsupp/src/sfzutf/sfzutf-utils.c:198:19: style: The scope of the variable 't' can be reduced. [variableScope]
+    unsigned char t;
+                  ^
+core/testsupp/src/sfzutf/sfzutf_main_stdio.c:409:26: style: Redundant initialization for 'line_start_p'. The initialized value is overwritten before it is read. [redundantInitialization]
+            line_start_p = line_skipHorizontalWhiteSpace(line_p);
+                         ^
+core/testsupp/src/sfzutf/sfzutf_main_stdio.c:408:32: note: line_start_p is initialized
+            char *line_start_p = line_p;
+                               ^
+core/testsupp/src/sfzutf/sfzutf_main_stdio.c:409:26: note: line_start_p is overwritten
+            line_start_p = line_skipHorizontalWhiteSpace(line_p);
+                         ^
+crypto/aead/chacha20poly1305ietf/aead_chacha20poly1305.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 254 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/dolbeau/chacha20_dolbeau-avx2.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/dolbeau/chacha20_dolbeau-avx2.c:174:9: error: There is an unknown macro here somewhere. Configuration is required. If SODIUM_C99 is a macro then please configure it. [unknownMacro]
+        SODIUM_C99(.stream =) stream_ref,
+        ^
+crypto/aead/chacha20poly1305ietf/dolbeau/chacha20_dolbeau-ssse3.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/dolbeau/chacha20_dolbeau-ssse3.c:168:9: error: There is an unknown macro here somewhere. Configuration is required. If SODIUM_C99 is a macro then please configure it. [unknownMacro]
+        SODIUM_C99(.stream =) stream_ref,
+        ^
+crypto/aead/chacha20poly1305ietf/donna/poly1305_donna.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 244 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 252 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/ps_chacha20poly1305ietf.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 244 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/ref/chacha20_ref.c:312:9: error: There is an unknown macro here somewhere. Configuration is required. If SODIUM_C99 is a macro then please configure it. [unknownMacro]
+        SODIUM_C99(.stream =) stream_ref,
+        ^
+crypto/aead/chacha20poly1305ietf/runtime.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 264 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:6:0: error: No header in #include [preprocessorErrorDirective]
+#  include ""
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:117:13: style: Variable 'id' is assigned a value that is never used. [unreadVariable]
+    if ((id = cpu_info[0]) == 0U) {
+            ^
+crypto/aead/chacha20poly1305ietf/sse2/poly1305_sse2.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 248 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/sse2/poly1305_sse2.c:947:9: error: There is an unknown macro here somewhere. Configuration is required. If SODIUM_C99 is a macro then please configure it. [unknownMacro]
+        SODIUM_C99(.onetimeauth =) psCrypto_onetimeauth_poly1305_sse2,
+        ^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 253 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 265 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:297:18: style: The scope of the variable 'x' can be reduced. [variableScope]
+    unsigned int x;
+                 ^
+crypto/aead/chacha20poly1305ietf/utils.c:298:18: style: The scope of the variable 'b' can be reduced. [variableScope]
+    int          b;
+                 ^
+crypto/aead/chacha20poly1305ietf/utils.c:299:18: style: The scope of the variable 'c' can be reduced. [variableScope]
+    int          c;
+                 ^
+crypto/aead/chacha20poly1305ietf/utils.c:328:19: style: The scope of the variable 'c' can be reduced. [variableScope]
+    unsigned char c;
+                  ^
+crypto/aead/chacha20poly1305ietf/utils.c:330:19: style: The scope of the variable 'c_alpha0' can be reduced. [variableScope]
+    unsigned char c_alpha0, c_alpha;
+                  ^
+crypto/aead/chacha20poly1305ietf/utils.c:331:19: style: The scope of the variable 'c_num0' can be reduced. [variableScope]
+    unsigned char c_num0, c_num;
+                  ^
+crypto/aead/chacha20poly1305ietf/verify.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 241 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/common/alg_info.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 250 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/common/digest_info.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 233 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/crypto_sign/ps_ed25519.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 237 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/digest_libsodium.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/digest_openssl.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/hash.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 226 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/hkdf.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/hmac.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 239 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/hmac.c:41:14: style: Unused variable: hmacKeyLen [unusedVariable]
+    psSize_t hmacKeyLen;
+             ^
+crypto/digest/md2.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/md2.c:119:14: style: The scope of the variable 'n' can be reduced. [variableScope]
+    uint32_t n;
+             ^
+crypto/digest/md4.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/md5.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 231 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/md5.c:66:14: style: The scope of the variable 'n' can be reduced. [variableScope]
+    uint32_t n;
+             ^
+crypto/digest/md5.c:107:26: style:inconclusive: Function 'psMd5Final' argument 1 names different: declaration 'md' definition 'md5'. [funcArgNamesDifferent]
+void psMd5Final(psMd5_t *md5, unsigned char hash[MD5_HASHLEN])
+                         ^
+crypto/cryptoApi.h:373:36: note: Function 'psMd5Final' argument 1 names different: declaration 'md' definition 'md5'.
+PSPUBLIC void psMd5Final(psMd5_t * md, unsigned char hash[MD5_HASHLEN]);
+                                   ^
+crypto/digest/md5.c:107:26: note: Function 'psMd5Final' argument 1 names different: declaration 'md' definition 'md5'.
+void psMd5Final(psMd5_t *md5, unsigned char hash[MD5_HASHLEN])
+                         ^
+crypto/digest/md5sha1.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 229 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/sha1.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 231 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/sha1.c:189:14: style: The scope of the variable 'n' can be reduced. [variableScope]
+    uint32_t n;
+             ^
+crypto/digest/sha256.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/sha256.c:368:31: style:inconclusive: Function 'psSha224Init' argument 1 names different: declaration 'sha224' definition 'sha256'. [funcArgNamesDifferent]
+void psSha224Init(psSha256_t *sha256)
+                              ^
+crypto/cryptoApi.h:434:40: note: Function 'psSha224Init' argument 1 names different: declaration 'sha224' definition 'sha256'.
+PSPUBLIC void psSha224Init(psSha256_t *sha224);
+                                       ^
+crypto/digest/sha256.c:368:31: note: Function 'psSha224Init' argument 1 names different: declaration 'sha224' definition 'sha256'.
+void psSha224Init(psSha256_t *sha256)
+                              ^
+crypto/digest/sha256.c:393:33: style:inconclusive: Function 'psSha224Update' argument 1 names different: declaration 'sha224' definition 'sha256'. [funcArgNamesDifferent]
+void psSha224Update(psSha256_t *sha256, const unsigned char *buf, uint32 len)
+                                ^
+crypto/cryptoApi.h:435:42: note: Function 'psSha224Update' argument 1 names different: declaration 'sha224' definition 'sha256'.
+PSPUBLIC void psSha224Update(psSha256_t *sha224,
+                                         ^
+crypto/digest/sha256.c:393:33: note: Function 'psSha224Update' argument 1 names different: declaration 'sha224' definition 'sha256'.
+void psSha224Update(psSha256_t *sha256, const unsigned char *buf, uint32 len)
+                                ^
+crypto/digest/sha256.c:400:32: style:inconclusive: Function 'psSha224Final' argument 1 names different: declaration 'sha224' definition 'sha256'. [funcArgNamesDifferent]
+void psSha224Final(psSha256_t *sha256, unsigned char out[SHA224_HASHLEN])
+                               ^
+crypto/cryptoApi.h:437:42: note: Function 'psSha224Final' argument 1 names different: declaration 'sha224' definition 'sha256'.
+PSPUBLIC void psSha224Final(psSha256_t * sha224,
+                                         ^
+crypto/digest/sha256.c:400:32: note: Function 'psSha224Final' argument 1 names different: declaration 'sha224' definition 'sha256'.
+void psSha224Final(psSha256_t *sha256, unsigned char out[SHA224_HASHLEN])
+                               ^
+crypto/digest/sha256.c:400:54: style:inconclusive: Function 'psSha224Final' argument 2 names different: declaration 'hash' definition 'out'. [funcArgNamesDifferent]
+void psSha224Final(psSha256_t *sha256, unsigned char out[SHA224_HASHLEN])
+                                                     ^
+crypto/cryptoApi.h:438:43: note: Function 'psSha224Final' argument 2 names different: declaration 'hash' definition 'out'.
+                            unsigned char hash[SHA224_HASHLEN]);
+                                          ^
+crypto/digest/sha256.c:400:54: note: Function 'psSha224Final' argument 2 names different: declaration 'hash' definition 'out'.
+void psSha224Final(psSha256_t *sha256, unsigned char out[SHA224_HASHLEN])
+                                                     ^
+crypto/digest/sha256_standalone.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/sha512.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 237 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/digest/sha512.c:181:34: style:inconclusive: Function 'psSha512Init' argument 1 names different: declaration 'md' definition 'sha512'. [funcArgNamesDifferent]
+int32_t psSha512Init(psSha512_t *sha512)
+                                 ^
+crypto/cryptoApi.h:509:43: note: Function 'psSha512Init' argument 1 names different: declaration 'md' definition 'sha512'.
+PSPUBLIC int32_t psSha512Init(psSha512_t *md);
+                                          ^
+crypto/digest/sha512.c:181:34: note: Function 'psSha512Init' argument 1 names different: declaration 'md' definition 'sha512'.
+int32_t psSha512Init(psSha512_t *sha512)
+                                 ^
+crypto/digest/sha512.c:202:33: style:inconclusive: Function 'psSha512Update' argument 1 names different: declaration 'md' definition 'sha512'. [funcArgNamesDifferent]
+void psSha512Update(psSha512_t *sha512, const unsigned char *buf, uint32_t len)
+                                ^
+crypto/cryptoApi.h:510:42: note: Function 'psSha512Update' argument 1 names different: declaration 'md' definition 'sha512'.
+PSPUBLIC void psSha512Update(psSha512_t *md,
+                                         ^
+crypto/digest/sha512.c:202:33: note: Function 'psSha512Update' argument 1 names different: declaration 'md' definition 'sha512'.
+void psSha512Update(psSha512_t *sha512, const unsigned char *buf, uint32_t len)
+                                ^
+crypto/digest/sha512.c:242:32: style:inconclusive: Function 'psSha512Final' argument 1 names different: declaration 'md' definition 'sha512'. [funcArgNamesDifferent]
+void psSha512Final(psSha512_t *sha512, unsigned char out[SHA512_HASHLEN])
+                               ^
+crypto/cryptoApi.h:512:42: note: Function 'psSha512Final' argument 1 names different: declaration 'md' definition 'sha512'.
+PSPUBLIC void psSha512Final(psSha512_t * md,
+                                         ^
+crypto/digest/sha512.c:242:32: note: Function 'psSha512Final' argument 1 names different: declaration 'md' definition 'sha512'.
+void psSha512Final(psSha512_t *sha512, unsigned char out[SHA512_HASHLEN])
+                               ^
+crypto/digest/sha512.c:242:54: style:inconclusive: Function 'psSha512Final' argument 2 names different: declaration 'hash' definition 'out'. [funcArgNamesDifferent]
+void psSha512Final(psSha512_t *sha512, unsigned char out[SHA512_HASHLEN])
+                                                     ^
+crypto/cryptoApi.h:513:43: note: Function 'psSha512Final' argument 2 names different: declaration 'hash' definition 'out'.
+                            unsigned char hash[SHA512_HASHLEN]);
+                                          ^
+crypto/digest/sha512.c:242:54: note: Function 'psSha512Final' argument 2 names different: declaration 'hash' definition 'out'.
+void psSha512Final(psSha512_t *sha512, unsigned char out[SHA512_HASHLEN])
+                                                     ^
+crypto/keyformat/asn1.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 226 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/asn1.c:198:14: style: Variable 'rc' is reassigned a value before the old one has been used. [redundantAssignment]
+        ((rc = getAsnLength32(&p, size - 1, len, indefinite)) < 0))
+             ^
+crypto/keyformat/asn1.c:196:8: note: rc is assigned
+    rc = PS_PARSE_FAIL;
+       ^
+crypto/keyformat/asn1.c:198:14: note: rc is overwritten
+        ((rc = getAsnLength32(&p, size - 1, len, indefinite)) < 0))
+             ^
+crypto/keyformat/asn1.c:246:14: style: Variable 'rc' is reassigned a value before the old one has been used. [redundantAssignment]
+        ((rc = getAsnLength32(&p, size - 1, len, indefinite)) < 0))
+             ^
+crypto/keyformat/asn1.c:244:8: note: rc is assigned
+    rc = PS_PARSE_FAIL;
+       ^
+crypto/keyformat/asn1.c:246:14: note: rc is overwritten
+        ((rc = getAsnLength32(&p, size - 1, len, indefinite)) < 0))
+             ^
+crypto/keyformat/asn1.c:286:14: style: Variable 'rc' is reassigned a value before the old one has been used. [redundantAssignment]
+        ((rc = getAsnLength32(&p, size - 1, &vlen, 0)) < 0))
+             ^
+crypto/keyformat/asn1.c:283:8: note: rc is assigned
+    rc = PS_PARSE_FAIL;
+       ^
+crypto/keyformat/asn1.c:286:14: note: rc is overwritten
+        ((rc = getAsnLength32(&p, size - 1, &vlen, 0)) < 0))
+             ^
+crypto/keyformat/asn1.c:347:14: style: Variable 'rc' is reassigned a value before the old one has been used. [redundantAssignment]
+        ((rc = getAsnLength32(&p, size - 1, &vlen, 0)) < 0))
+             ^
+crypto/keyformat/asn1.c:344:8: note: rc is assigned
+    rc = PS_PARSE_FAIL;
+       ^
+crypto/keyformat/asn1.c:347:14: note: rc is overwritten
+        ((rc = getAsnLength32(&p, size - 1, &vlen, 0)) < 0))
+             ^
+crypto/keyformat/asn1.c:412:25: style: Variable 'rc' is reassigned a value before the old one has been used. [redundantAssignment]
+    if (size < 1 || (rc = getAsnSequence32(&p, size, &llen, 0)) < 0)
+                        ^
+crypto/keyformat/asn1.c:410:8: note: rc is assigned
+    rc = PS_PARSE_FAIL;
+       ^
+crypto/keyformat/asn1.c:412:25: note: rc is overwritten
+    if (size < 1 || (rc = getAsnSequence32(&p, size, &llen, 0)) < 0)
+                        ^
+crypto/keyformat/asn1.c:279:18: style: The scope of the variable 'slen' can be reduced. [variableScope]
+    uint32_t ui, slen;
+                 ^
+crypto/keyformat/asn1.c:340:18: style: The scope of the variable 'slen' can be reduced. [variableScope]
+    uint32_t ui, slen;
+                 ^
+crypto/keyformat/asn1.c:593:16: style: The scope of the variable 'oid_copy' can be reduced. [variableScope]
+    psAsnOid_t oid_copy;
+               ^
+crypto/keyformat/asn1.c:83:44: style:inconclusive: Function 'getAsnLength' argument 1 names different: declaration 'p' definition 'pp'. [funcArgNamesDifferent]
+int32_t getAsnLength(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                           ^
+crypto/keyformat/asn1.h:88:51: note: Function 'getAsnLength' argument 1 names different: declaration 'p' definition 'pp'.
+extern int32_t getAsnLength(const unsigned char **p, psSizeL_t size,
+                                                  ^
+crypto/keyformat/asn1.c:83:44: note: Function 'getAsnLength' argument 1 names different: declaration 'p' definition 'pp'.
+int32_t getAsnLength(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                           ^
+crypto/keyformat/asn1.c:83:74: style:inconclusive: Function 'getAsnLength' argument 3 names different: declaration 'valLen' definition 'len'. [funcArgNamesDifferent]
+int32_t getAsnLength(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                                                         ^
+crypto/keyformat/asn1.h:89:39: note: Function 'getAsnLength' argument 3 names different: declaration 'valLen' definition 'len'.
+                            psSize_t *valLen);
+                                      ^
+crypto/keyformat/asn1.c:83:74: note: Function 'getAsnLength' argument 3 names different: declaration 'valLen' definition 'len'.
+int32_t getAsnLength(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                                                         ^
+crypto/keyformat/asn1.c:96:46: style:inconclusive: Function 'getAsnLength32' argument 1 names different: declaration 'p' definition 'pp'. [funcArgNamesDifferent]
+int32_t getAsnLength32(const unsigned char **pp, psSizeL_t size, psSize32_t *len,
+                                             ^
+crypto/keyformat/asn1.h:90:53: note: Function 'getAsnLength32' argument 1 names different: declaration 'p' definition 'pp'.
+extern int32_t getAsnLength32(const unsigned char **p, psSizeL_t size,
+                                                    ^
+crypto/keyformat/asn1.c:96:46: note: Function 'getAsnLength32' argument 1 names different: declaration 'p' definition 'pp'.
+int32_t getAsnLength32(const unsigned char **pp, psSizeL_t size, psSize32_t *len,
+                                             ^
+crypto/keyformat/asn1.c:96:78: style:inconclusive: Function 'getAsnLength32' argument 3 names different: declaration 'valLen' definition 'len'. [funcArgNamesDifferent]
+int32_t getAsnLength32(const unsigned char **pp, psSizeL_t size, psSize32_t *len,
+                                                                             ^
+crypto/keyformat/asn1.h:91:41: note: Function 'getAsnLength32' argument 3 names different: declaration 'valLen' definition 'len'.
+                              uint32_t *valLen, uint32_t indefinite);
+                                        ^
+crypto/keyformat/asn1.c:96:78: note: Function 'getAsnLength32' argument 3 names different: declaration 'valLen' definition 'len'.
+int32_t getAsnLength32(const unsigned char **pp, psSizeL_t size, psSize32_t *len,
+                                                                             ^
+crypto/keyformat/asn1.c:220:76: style:inconclusive: Function 'getAsnSequence' argument 3 names different: declaration 'seqlen' definition 'len'. [funcArgNamesDifferent]
+int32_t getAsnSequence(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                                                           ^
+crypto/keyformat/asn1.h:93:41: note: Function 'getAsnSequence' argument 3 names different: declaration 'seqlen' definition 'len'.
+                              psSize_t *seqlen);
+                                        ^
+crypto/keyformat/asn1.c:220:76: note: Function 'getAsnSequence' argument 3 names different: declaration 'seqlen' definition 'len'.
+int32_t getAsnSequence(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                                                           ^
+crypto/keyformat/asn1.c:260:71: style:inconclusive: Function 'getAsnSet' argument 3 names different: declaration 'setlen' definition 'len'. [funcArgNamesDifferent]
+int32_t getAsnSet(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                                                      ^
+crypto/keyformat/asn1.h:97:36: note: Function 'getAsnSet' argument 3 names different: declaration 'setlen' definition 'len'.
+                         psSize_t *setlen);
+                                   ^
+crypto/keyformat/asn1.c:260:71: note: Function 'getAsnSet' argument 3 names different: declaration 'setlen' definition 'len'.
+int32_t getAsnSet(const unsigned char **pp, psSizeL_t size, psSize_t *len)
+                                                                      ^
+crypto/keyformat/asn1fmt.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/base64.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/crl.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/crl.c:555:9: style: The scope of the variable 'expectCrl' can be reduced. [variableScope]
+    int expectCrl;
+        ^
+crypto/keyformat/crl.c:556:13: style: The scope of the variable 'revoked' can be reduced. [variableScope]
+    int32_t revoked;
+            ^
+crypto/keyformat/crl.c:878:60: style: The scope of the variable 'revStart' can be reduced. [variableScope]
+    const unsigned char *end, *start, *sigStart, *sigEnd, *revStart, *p = crlBin;
+                                                           ^
+crypto/keyformat/pbkdf2.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/pem_decode_file.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/pem_decode_mem.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/pkcs.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 246 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/x509.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 299 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/keyformat/x509.c:4964:13: style: Condition 'len<1' is always false [knownConditionTrueFalse]
+    if (len < 1 || getAsnLength(&p, len - 1, &vlen) < 0 || (len - 1) < vlen)
+            ^
+crypto/keyformat/x509.c:4950:13: note: Assuming that condition 'len<1' is not redundant
+    if (len < 1)
+            ^
+crypto/keyformat/x509.c:4956:60: note: Assuming condition is false
+    if ((*p != (ASN_CONTEXT_SPECIFIC | ASN_PRIMITIVE | 2)) &&
+                                                           ^
+crypto/keyformat/x509.c:4964:13: note: Condition 'len<1' is always false
+    if (len < 1 || getAsnLength(&p, len - 1, &vlen) < 0 || (len - 1) < vlen)
+            ^
+crypto/keyformat/x509.c:6065:13: style:inconclusive: Found duplicate branches for 'if' and 'else'. [duplicateBranch]
+            if (sc == ic)
+            ^
+crypto/keyformat/x509.c:6069:13: note: Found duplicate branches for 'if' and 'else'.
+            else
+            ^
+crypto/keyformat/x509.c:6065:13: note: Found duplicate branches for 'if' and 'else'.
+            if (sc == ic)
+            ^
+crypto/keyformat/x509.c:1451:22: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int32_t parsing, rc;
+                     ^
+crypto/keyformat/x509.c:1963:13: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int32_t rc, ix, numFound = 0;
+            ^
+crypto/keyformat/x509.c:2664:15: style: The scope of the variable 'pool' can be reduced. [variableScope]
+    psPool_t *pool;
+              ^
+crypto/keyformat/x509.c:3331:9: style: The scope of the variable 'i' can be reduced. [variableScope]
+    int i;
+        ^
+crypto/keyformat/x509.c:240:50: style:inconclusive: Function 'psX509ParseCertData' argument 2 names different: declaration 'data' definition 'buf'. [funcArgNamesDifferent]
+                            const unsigned char *buf, psSizeL_t len,
+                                                 ^
+crypto/cryptoApi.h:1067:59: note: Function 'psX509ParseCertData' argument 2 names different: declaration 'data' definition 'buf'.
+                                     const unsigned char *data, psSizeL_t data_len,
+                                                          ^
+crypto/keyformat/x509.c:240:50: note: Function 'psX509ParseCertData' argument 2 names different: declaration 'data' definition 'buf'.
+                            const unsigned char *buf, psSizeL_t len,
+                                                 ^
+crypto/keyformat/x509.c:240:65: style:inconclusive: Function 'psX509ParseCertData' argument 3 names different: declaration 'data_len' definition 'len'. [funcArgNamesDifferent]
+                            const unsigned char *buf, psSizeL_t len,
+                                                                ^
+crypto/cryptoApi.h:1067:75: note: Function 'psX509ParseCertData' argument 3 names different: declaration 'data_len' definition 'len'.
+                                     const unsigned char *data, psSizeL_t data_len,
+                                                                          ^
+crypto/keyformat/x509.c:240:65: note: Function 'psX509ParseCertData' argument 3 names different: declaration 'data_len' definition 'len'.
+                            const unsigned char *buf, psSizeL_t len,
+                                                                ^
+crypto/keyformat/x509.c:241:44: style:inconclusive: Function 'psX509ParseCertData' argument 4 names different: declaration 'outcert' definition 'certs'. [funcArgNamesDifferent]
+                            psX509Cert_t **certs,
+                                           ^
+crypto/cryptoApi.h:1068:53: note: Function 'psX509ParseCertData' argument 4 names different: declaration 'outcert' definition 'certs'.
+                                     psX509Cert_t **outcert, int32 flags);
+                                                    ^
+crypto/keyformat/x509.c:241:44: note: Function 'psX509ParseCertData' argument 4 names different: declaration 'outcert' definition 'certs'.
+                            psX509Cert_t **certs,
+                                           ^
+crypto/keyformat/x509.c:1957:17: style:inconclusive: Function 'psX509GetDNAttributeIndex' argument 3 names different: declaration 'nth_occurence' definition 'nth_occurrence'. [funcArgNamesDifferent]
+        int32_t nth_occurrence)
+                ^
+crypto/keyformat/x509.h:737:17: note: Function 'psX509GetDNAttributeIndex' argument 3 names different: declaration 'nth_occurence' definition 'nth_occurrence'.
+        int32_t nth_occurence);
+                ^
+crypto/keyformat/x509.c:1957:17: note: Function 'psX509GetDNAttributeIndex' argument 3 names different: declaration 'nth_occurence' definition 'nth_occurrence'.
+        int32_t nth_occurrence)
+                ^
+crypto/keyformat/x509.c:268:19: style: Variable 'tailp' is assigned a value that is never used. [unreadVariable]
+            tailp = &(current->next);
+                  ^
+crypto/keyformat/x509.c:686:19: style: Unused variable: sha1KeyHash [unusedVariable]
+    unsigned char sha1KeyHash[SHA1_HASH_SIZE];
+                  ^
+crypto/layer/matrix.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/math/pstm.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 242 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/math/pstm.c:103:14: style: The scope of the variable 'i' can be reduced. [variableScope]
+    uint16_t i;
+             ^
+crypto/math/pstm.c:143:13: style: The scope of the variable 'res' can be reduced. [variableScope]
+    int32_t res, n;
+            ^
+crypto/math/pstm.c:143:18: style: The scope of the variable 'n' can be reduced. [variableScope]
+    int32_t res, n;
+                 ^
+crypto/math/pstm.c:763:14: style: The scope of the variable 'x' can be reduced. [variableScope]
+    uint16_t x;
+             ^
+crypto/math/pstm.c:764:13: style: The scope of the variable 'res' can be reduced. [variableScope]
+    int32_t res;
+            ^
+crypto/math/pstm.c:866:32: style: The scope of the variable 'rr' can be reduced. [variableScope]
+        register pstm_digit r, rr, *tmpa, *tmpb;
+                               ^
+crypto/math/pstm.c:1199:16: style: The scope of the variable 'carry' can be reduced. [variableScope]
+    pstm_digit carry, carrytmp, shift;
+               ^
+crypto/math/pstm.c:1199:23: style: The scope of the variable 'carrytmp' can be reduced. [variableScope]
+    pstm_digit carry, carrytmp, shift;
+                      ^
+crypto/math/pstm.c:1199:33: style: The scope of the variable 'shift' can be reduced. [variableScope]
+    pstm_digit carry, carrytmp, shift;
+                                ^
+crypto/math/pstm.c:1200:14: style: The scope of the variable 'x' can be reduced. [variableScope]
+    uint16_t x;
+             ^
+crypto/math/pstm.c:1432:32: style: The scope of the variable 'rr' can be reduced. [variableScope]
+        register pstm_digit r, rr, *tmpa, *tmpb;
+                               ^
+crypto/math/pstm.c:2506:19: style: The scope of the variable 't' can be reduced. [variableScope]
+    unsigned char t;
+                  ^
+crypto/math/pstm.c:2560:13: style: The scope of the variable 'res' can be reduced. [variableScope]
+    int32_t res;
+            ^
+crypto/math/pstm.c:767:11: style: Checking if unsigned expression 'b' is less than zero. [unsignedLessThanZero]
+    if (b <= 0)
+          ^
+crypto/math/pstm.c:1279:47: portability: Shifting a negative value is technically undefined behaviour [shiftNegativeLHS]
+    c->dp[b / DIGIT_BIT] &= ~((pstm_digit) 0) >> (DIGIT_BIT - b);
+                                              ^
+crypto/math/pstm.c:2093:21: style: Local variable 'mp' shadows outer variable [shadowVariable]
+        pstmnt_word mp = pstmnt_neg_small_inv(pstmnt_const_ptr(P));
+                    ^
+crypto/math/pstm.c:2057:21: note: Shadowed declaration
+    pstm_digit buf, mp;
+                    ^
+crypto/math/pstm.c:2093:21: note: Shadow variable
+        pstmnt_word mp = pstmnt_neg_small_inv(pstmnt_const_ptr(P));
+                    ^
+crypto/math/pstm.c:2104:21: style: Local variable 'err' shadows outer variable [shadowVariable]
+            int32_t err;
+                    ^
+crypto/math/pstm.c:2059:11: note: Shadowed declaration
+    int32 err, bitbuf;
+          ^
+crypto/math/pstm.c:2104:21: note: Shadow variable
+            int32_t err;
+                    ^
+crypto/math/pstm_montgomery_reduce.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/math/pstm_mul_comba.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 237 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/math/pstm_sqr_comba.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 237 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/math/pstm_str.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 226 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/math/pstmnt.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 245 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/prng/prng.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/prng/yarrow.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/dh.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/dh_export.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/dh_gen_key.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/dh_gen_secret.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/dh_import.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/dh_import_priv.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/dh_params.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_curve.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_curve_config.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 236 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_curve_data.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 236 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_export.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_gen_shared.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_import.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_keygen.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_math.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_parse_file.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 229 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_parse_mem.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 229 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_priv.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_priv_el_gamal.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_pub.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_write_file.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 226 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/ecc_write_mem.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 226 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/pubkey.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 229 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/pubkey_parse_file.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 239 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/pubkey_parse_mem.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/pubkey_sign.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 240 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/pubkey_sign.c:70:12: style: Redundant initialization for 'sigLen'. The initialized value is overwritten before it is read. [redundantInitialization]
+    sigLen = sizeof(tmp);
+           ^
+crypto/pubkey/pubkey_sign.c:56:21: note: sigLen is initialized
+    psSize_t sigLen = sizeof(tmp);
+                    ^
+crypto/pubkey/pubkey_sign.c:70:12: note: sigLen is overwritten
+    sigLen = sizeof(tmp);
+           ^
+crypto/pubkey/pubkey_verify.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 235 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_keygen.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_openssl.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 231 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_parse_file.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_parse_mem.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 232 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_priv.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 233 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_pub.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 229 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_write_file.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/pubkey/rsa_write_mem.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 226 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/scalarmult/crypto_core/ed25519/ref10/ed25519_ref10.c:764:41: style: Same expression on both sides of '-'. [duplicateExpression]
+    psSodium_ge25519_p3_to_cached(&pi[1 - 1], p);   /* p */
+                                        ^
+crypto/scalarmult/crypto_core/ed25519/ref10/ed25519_ref10.c:989:19: style: Local variable 'd' shadows outer variable [shadowVariable]
+    unsigned char d;
+                  ^
+crypto/scalarmult/crypto_core/ed25519/ref10/fe_25_5/constants.h:2:22: note: Shadowed declaration
+static const fe25519 d = {
+                     ^
+crypto/scalarmult/crypto_core/ed25519/ref10/ed25519_ref10.c:989:19: note: Shadow variable
+    unsigned char d;
+                  ^
+crypto/scalarmult/crypto_core/ed25519/ref10/ed25519_ref10.c:989:19: style: Local variable 'd' shadows outer variable [shadowVariable]
+    unsigned char d;
+                  ^
+crypto/scalarmult/crypto_core/ed25519/ref10/fe_51/constants.h:2:22: note: Shadowed declaration
+static const fe25519 d = {
+                     ^
+crypto/scalarmult/crypto_core/ed25519/ref10/ed25519_ref10.c:989:19: note: Shadow variable
+    unsigned char d;
+                  ^
+crypto/scalarmult/curve25519/ref10/x25519_ref10.c:157:9: error: There is an unknown macro here somewhere. Configuration is required. If SODIUM_C99 is a macro then please configure it. [unknownMacro]
+        SODIUM_C99(.mult =) psSodium_crypto_scalarmult_curve25519_ref10,
+        ^
+crypto/scalarmult/curve25519/sandy2x/curve25519_sandy2x.c:110:5: error: There is an unknown macro here somewhere. Configuration is required. If SODIUM_C99 is a macro then please configure it. [unknownMacro]
+    SODIUM_C99(.mult = ) psSodium_crypto_scalarmult_curve25519_sandy2x,
+    ^
+crypto/scalarmult/ps_x25519.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/aes.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 231 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/aesCBC.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/aesGCM.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 229 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/aesGCM.c:322:28: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+        if (Y[i / 32] & (1 << (31 - i % 32)))
+                           ^
+crypto/symmetric/aesGCM.c:322:28: error: Signed integer overflow for expression '1<<(31-i%32)'. [integerOverflow]
+        if (Y[i / 32] & (1 << (31 - i % 32)))
+                           ^
+crypto/symmetric/aes_aesni.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 240 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/arc4.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/des3.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/des3.c:1293:19: style: The scope of the variable 'raw0' can be reduced. [variableScope]
+    const uint32 *raw0;
+                  ^
+crypto/symmetric/des3.c:1319:26: style: The scope of the variable 'n' can be reduced. [variableScope]
+    uint32_t i, j, l, m, n, kn[32];
+                         ^
+crypto/symmetric/des3.c:1505:30: style:inconclusive: Function 'psDes3Init' argument 1 names different: declaration 'ctx' definition 'des3'. [funcArgNamesDifferent]
+int32_t psDes3Init(psDes3_t *des3, const unsigned char IV[DES3_IVLEN],
+                             ^
+crypto/cryptoApi.h:333:39: note: Function 'psDes3Init' argument 1 names different: declaration 'ctx' definition 'des3'.
+PSPUBLIC int32_t psDes3Init(psDes3_t *ctx, const unsigned char IV[DES3_IVLEN],
+                                      ^
+crypto/symmetric/des3.c:1505:30: note: Function 'psDes3Init' argument 1 names different: declaration 'ctx' definition 'des3'.
+int32_t psDes3Init(psDes3_t *des3, const unsigned char IV[DES3_IVLEN],
+                             ^
+crypto/symmetric/des3.c:1537:30: style:inconclusive: Function 'psDes3Encrypt' argument 1 names different: declaration 'ctx' definition 'des3'. [funcArgNamesDifferent]
+void psDes3Encrypt(psDes3_t *des3, const unsigned char *pt,
+                             ^
+crypto/cryptoApi.h:337:39: note: Function 'psDes3Encrypt' argument 1 names different: declaration 'ctx' definition 'des3'.
+PSPUBLIC void psDes3Encrypt(psDes3_t *ctx, const unsigned char *pt,
+                                      ^
+crypto/symmetric/des3.c:1537:30: note: Function 'psDes3Encrypt' argument 1 names different: declaration 'ctx' definition 'des3'.
+void psDes3Encrypt(psDes3_t *des3, const unsigned char *pt,
+                             ^
+crypto/symmetric/des3.c:1579:30: style:inconclusive: Function 'psDes3Decrypt' argument 1 names different: declaration 'ctx' definition 'des3'. [funcArgNamesDifferent]
+void psDes3Decrypt(psDes3_t *des3, const unsigned char *ct,
+                             ^
+crypto/cryptoApi.h:335:39: note: Function 'psDes3Decrypt' argument 1 names different: declaration 'ctx' definition 'des3'.
+PSPUBLIC void psDes3Decrypt(psDes3_t *ctx, const unsigned char *ct,
+                                      ^
+crypto/symmetric/des3.c:1579:30: note: Function 'psDes3Decrypt' argument 1 names different: declaration 'ctx' definition 'des3'.
+void psDes3Decrypt(psDes3_t *des3, const unsigned char *ct,
+                             ^
+crypto/symmetric/des3.c:1619:28: style:inconclusive: Function 'psDes3Clear' argument 1 names different: declaration 'ctx' definition 'des3'. [funcArgNamesDifferent]
+void psDes3Clear(psDes3_t *des3)
+                           ^
+crypto/cryptoApi.h:339:37: note: Function 'psDes3Clear' argument 1 names different: declaration 'ctx' definition 'des3'.
+PSPUBLIC void psDes3Clear(psDes3_t *ctx);
+                                    ^
+crypto/symmetric/des3.c:1619:28: note: Function 'psDes3Clear' argument 1 names different: declaration 'ctx' definition 'des3'.
+void psDes3Clear(psDes3_t *des3)
+                           ^
+crypto/symmetric/des3.c:1662:18: style:inconclusive: Function 'psDes3EncryptBlock' argument 3 names different: declaration 'skey' definition 'key'. [funcArgNamesDifferent]
+    psDes3Key_t *key)
+                 ^
+crypto/symmetric/des3.c:44:45: note: Function 'psDes3EncryptBlock' argument 3 names different: declaration 'skey' definition 'key'.
+                               psDes3Key_t *skey);
+                                            ^
+crypto/symmetric/des3.c:1662:18: note: Function 'psDes3EncryptBlock' argument 3 names different: declaration 'skey' definition 'key'.
+    psDes3Key_t *key)
+                 ^
+crypto/symmetric/des3.c:1676:18: style:inconclusive: Function 'psDes3DecryptBlock' argument 3 names different: declaration 'skey' definition 'key'. [funcArgNamesDifferent]
+    psDes3Key_t *key)
+                 ^
+crypto/symmetric/des3.c:46:45: note: Function 'psDes3DecryptBlock' argument 3 names different: declaration 'skey' definition 'key'.
+                               psDes3Key_t *skey);
+                                            ^
+crypto/symmetric/des3.c:1676:18: note: Function 'psDes3DecryptBlock' argument 3 names different: declaration 'skey' definition 'key'.
+    psDes3Key_t *key)
+                 ^
+crypto/symmetric/idea.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/rc2.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/seed.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 228 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/symmetric_libsodium.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 230 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/symmetric/symmetric_openssl.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 227 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/test/algorithmTest.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 64 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/test/algorithmTest.c:4102:13: style: The scope of the variable 'rc' can be reduced. [variableScope]
+    int32_t rc;
+            ^
+crypto/test/algorithmTest.c:7186:19: style: Local variable 'pool' shadows outer argument [shadowArgument]
+        psPool_t *pool = NULL;
+                  ^
+crypto/test/algorithmTest.c:7171:28: note: Shadowed declaration
+int32 loadKeyPub(psPool_t *pool,
+                           ^
+crypto/test/algorithmTest.c:7186:19: note: Shadow variable
+        psPool_t *pool = NULL;
+                  ^
+crypto/test/algorithmTest.c:2611:7: style: Local variable 'tests' shadows outer variable [shadowVariable]
+    } tests[] = {
+      ^
+crypto/test/algorithmTest.c:7426:15: note: Shadowed declaration
+static test_t tests[] = {
+              ^
+crypto/test/algorithmTest.c:2611:7: note: Shadow variable
+    } tests[] = {
+      ^
+crypto/test/algorithmTest.c:787:7: style: Local variable 'tests' shadows outer variable [shadowVariable]
+    } tests[] = {
+      ^
+crypto/test/algorithmTest.c:7426:15: note: Shadowed declaration
+static test_t tests[] = {
+              ^
+crypto/test/algorithmTest.c:787:7: note: Shadow variable
+    } tests[] = {
+      ^
+crypto/test/algorithmTest.c:908:7: style: Local variable 'tests' shadows outer variable [shadowVariable]
+    } tests[] = {
+      ^
+crypto/test/algorithmTest.c:7426:15: note: Shadowed declaration
+static test_t tests[] = {
+              ^
+crypto/test/algorithmTest.c:908:7: note: Shadow variable
+    } tests[] = {
+      ^
+crypto/test/algorithmTest.c:1970:7: style: Local variable 'tests' shadows outer variable [shadowVariable]
+    } tests[] = {
+      ^
+crypto/test/algorithmTest.c:7426:15: note: Shadowed declaration
+static test_t tests[] = {
+              ^
+crypto/test/algorithmTest.c:1970:7: note: Shadow variable
+    } tests[] = {
+      ^
+crypto/test/dhperf/dhperf.c:146:14: style: The scope of the variable 'iter' can be reduced. [variableScope]
+    uint16_t iter, i = 0;
+             ^
+crypto/test/dhperf/dhperf.c:148:21: style: Variable 'outLen' is assigned a value that is never used. [unreadVariable]
+    psSize_t outLen = sizeof(out);
+                    ^
+crypto/test/eccperf/eccperf.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/test/eccperf/eccperf.c:227:20: style: The scope of the variable 'out' can be reduced. [variableScope]
+    unsigned char *out;
+                   ^
+crypto/test/throughputTest.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 41 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+crypto/test/throughputTest.c:647:19: style: Unused variable: hashout [unusedVariable]
+    unsigned char hashout[64];
+                  ^
+crypto/test/throughputTest.c:649:13: style: Variable 'rv' is not assigned a value. [unassignedVariable]
+    psRes_t rv;
+            ^
+crypto/test/throughputTest.c:93:19: style: Unused variable: mac [unusedVariable]
+    unsigned char mac[MAX_HASH_SIZE];
+                  ^
+matrixssl/cipherSuite.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 761 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/cipherSuite.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/dtls.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 587 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/dtls.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/extDecode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 598 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/extDecode.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/hsDecode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 650 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/hsDecode.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/hsHash.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 602 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/hsHash.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/hsHashBuffered.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 574 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/hsHashBuffered.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/hsNegotiateVersion.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 575 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/hsNegotiateVersion.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/matrixssl.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 608 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/matrixssl.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/matrixsslApi.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 602 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/matrixsslApi.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/matrixsslGetSet.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 578 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/matrixsslGetSet.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/matrixsslInitVer.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 573 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/matrixsslInitVer.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/matrixsslKeys.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 617 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/matrixsslKeys.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/matrixsslNet.c:639:12: style:inconclusive: Function 'matrixSslInteractWrite' argument 3 names different: declaration 'length' definition 'in_len'. [funcArgNamesDifferent]
+    size_t in_len)
+           ^
+matrixssl/matrixsslNet.h:92:37: note: Function 'matrixSslInteractWrite' argument 3 names different: declaration 'length' definition 'in_len'.
+                             size_t length);
+                                    ^
+matrixssl/matrixsslNet.c:639:12: note: Function 'matrixSslInteractWrite' argument 3 names different: declaration 'length' definition 'in_len'.
+    size_t in_len)
+           ^
+matrixssl/matrixsslNet.c:398:32: style: Local variable 'buf' shadows outer variable [shadowVariable]
+                unsigned char *buf = NULL;
+                               ^
+matrixssl/matrixsslNet.c:263:20: note: Shadowed declaration
+    unsigned char *buf;
+                   ^
+matrixssl/matrixsslNet.c:398:32: note: Shadow variable
+                unsigned char *buf = NULL;
+                               ^
+matrixssl/matrixsslNet.c:399:26: style: Local variable 'len' shadows outer variable [shadowVariable]
+                uint32_t len = 0;
+                         ^
+matrixssl/matrixsslNet.c:353:15: note: Shadowed declaration
+        int32 len;
+              ^
+matrixssl/matrixsslNet.c:399:26: note: Shadow variable
+                uint32_t len = 0;
+                         ^
+matrixssl/matrixsslNet.c:798:17: style:inconclusive: Function 'matrixSslInteractBeginAccept' argument 2 names different: declaration 'socket' definition 'sock'. [funcArgNamesDifferent]
+    psSocket_t *sock,
+                ^
+matrixssl/matrixsslNet.h:119:48: note: Function 'matrixSslInteractBeginAccept' argument 2 names different: declaration 'socket' definition 'sock'.
+                                   psSocket_t *socket,
+                                               ^
+matrixssl/matrixsslNet.c:798:17: note: Function 'matrixSslInteractBeginAccept' argument 2 names different: declaration 'socket' definition 'sock'.
+    psSocket_t *sock,
+                ^
+matrixssl/matrixsslSecConfig.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 572 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/matrixsslSecConfig.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/prf.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 580 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/prf.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/psk.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 572 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/psk.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/sslDecode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 613 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/sslDecode.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/sslEncode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 714 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/sslEncode.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/sslv3.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 572 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/sslv3.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/test/certValidate.c:374:20: style: Variable 'certbuflen' is reassigned a value before the old one has been used. [redundantAssignment]
+        certbuflen = cert64len;
+                   ^
+matrixssl/test/certValidate.c:360:20: note: certbuflen is assigned
+        certbuflen = CERT_MAX_BYTES;
+                   ^
+matrixssl/test/certValidate.c:374:20: note: certbuflen is overwritten
+        certbuflen = cert64len;
+                   ^
+matrixssl/test/certValidate.c:562:13: style: Variable 'rc' is reassigned a value before the old one has been used. [redundantAssignment]
+    if ((rc = matrixSslOpen()) < 0)
+            ^
+matrixssl/test/certValidate.c:551:8: note: rc is assigned
+    rc = -1;
+       ^
+matrixssl/test/certValidate.c:562:13: note: rc is overwritten
+    if ((rc = matrixSslOpen()) < 0)
+            ^
+matrixssl/test/sslTest.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 148 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 602 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13Adapter.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 572 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13Adapter.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13Authenticate.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 572 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13Authenticate.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13CipherSuite.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 575 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13CipherSuite.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13Decode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 585 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13Decode.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13DecodeExt.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 580 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13DecodeExt.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13Encode.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 595 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13Encode.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13EncodeExt.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 581 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13EncodeExt.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13KeyAgree.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 580 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13KeyAgree.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13KeySchedule.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 574 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13KeySchedule.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13Negotiate.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 577 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13Negotiate.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13Psk.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 573 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13Psk.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13Resume.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 572 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13Resume.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13SigVer.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 585 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13SigVer.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13TrHash.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 574 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13TrHash.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tls13TrHashBuffered.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 572 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tls13TrHashBuffered.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tlsDefaults.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 576 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tlsDefaults.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tlsSelectKeys.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 578 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tlsSelectKeys.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tlsSigVer.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 599 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tlsSigVer.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+matrixssl/tlsTrace.c:0:0: information: Too many #ifdef configurations - cppcheck only checks 12 of 582 configurations. Use --force to check all configurations. [toomanyconfigs]
+
+^
+matrixssl/tlsTrace.c:0:0: information: This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details. [noValidConfiguration]
+
+^
+core/src/cl_basic.c:119:0: style: The function 'CL_MemCmp' is never used. [unusedFunction]
+
+^
+core/src/cl_basic.c:133:0: style: The function 'CL_MemCmpEndMask' is never used. [unusedFunction]
+
+^
+core/src/cl_basic.c:65:0: style: The function 'CL_MemEqual' is never used. [unusedFunction]
+
+^
+core/osdep/src/cl_memset.c:88:0: style: The function 'CL_MemSet' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:179:0: style: The function 'CurrentTestGetParameter' is never used. [unusedFunction]
+
+^
+core/src/debug_abort.c:47:0: style: The function 'DEBUG_abort' is never used. [unusedFunction]
+
+^
+core/src/debug_printf.c:63:0: style: The function 'DEBUG_printf' is never used. [unusedFunction]
+
+^
+core/src/utils.c:245:0: style: The function 'SLSodium_add' is never used. [unusedFunction]
+
+^
+core/src/utils.c:380:0: style: The function 'SLSodium_alloc_init' is never used. [unusedFunction]
+
+^
+core/src/utils.c:621:0: style: The function 'SLSodium_allocarray' is never used. [unusedFunction]
+
+^
+core/src/utils.c:296:0: style: The function 'SLSodium_bin2hex' is never used. [unusedFunction]
+
+^
+core/src/utils.c:158:0: style: The function 'SLSodium_compare' is never used. [unusedFunction]
+
+^
+core/src/utils.c:636:0: style: The function 'SLSodium_free' is never used. [unusedFunction]
+
+^
+core/src/utils.c:323:0: style: The function 'SLSodium_hex2bin' is never used. [unusedFunction]
+
+^
+core/src/utils.c:198:0: style: The function 'SLSodium_increment' is never used. [unusedFunction]
+
+^
+core/src/utils.c:186:0: style: The function 'SLSodium_is_zero' is never used. [unusedFunction]
+
+^
+core/src/utils.c:701:0: style: The function 'SLSodium_mprotect_noaccess' is never used. [unusedFunction]
+
+^
+core/src/utils.c:707:0: style: The function 'SLSodium_mprotect_readonly' is never used. [unusedFunction]
+
+^
+core/src/utils.c:713:0: style: The function 'SLSodium_mprotect_readwrite' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:207:0: style: The function 'SLSodium_runtime_get_cpu_features' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:267:0: style: The function 'SLSodium_runtime_has_aesni' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:249:0: style: The function 'SLSodium_runtime_has_avx' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:255:0: style: The function 'SLSodium_runtime_has_avx2' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:219:0: style: The function 'SLSodium_runtime_has_neon' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:261:0: style: The function 'SLSodium_runtime_has_pclmul' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:225:0: style: The function 'SLSodium_runtime_has_sse2' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:231:0: style: The function 'SLSodium_runtime_has_sse3' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:243:0: style: The function 'SLSodium_runtime_has_sse41' is never used. [unusedFunction]
+
+^
+core/osdep/src/runtime.c:237:0: style: The function 'SLSodium_runtime_has_ssse3' is never used. [unusedFunction]
+
+^
+core/src/sl_cpu.c:341:0: style: The function 'SL_DetectArmFeatures' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_mutex.c:113:0: style: The function 'SPAL_Mutex_Destroy' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_mutex.c:50:0: style: The function 'SPAL_Mutex_Init' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_mutex.c:134:0: style: The function 'SPAL_Mutex_IsLocked' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_mutex.c:77:0: style: The function 'SPAL_Mutex_Lock' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_mutex.c:163:0: style: The function 'SPAL_Mutex_TryLock' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_mutex.c:95:0: style: The function 'SPAL_Mutex_UnLock' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_semaphore.c:199:0: style: The function 'SPAL_Semaphore_Destroy' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_semaphore.c:51:0: style: The function 'SPAL_Semaphore_Init' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_semaphore.c:182:0: style: The function 'SPAL_Semaphore_Post' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_semaphore.c:133:0: style: The function 'SPAL_Semaphore_TimedWait' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_semaphore.c:104:0: style: The function 'SPAL_Semaphore_TryWait' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_semaphore.c:82:0: style: The function 'SPAL_Semaphore_Wait' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_sleep.c:46:0: style: The function 'SPAL_SleepMS' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_thread.c:57:0: style: The function 'SPAL_Thread_Create' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_thread.c:97:0: style: The function 'SPAL_Thread_Detach' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_thread.c:196:0: style: The function 'SPAL_Thread_Exit' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/spal_posix_thread.c:137:0: style: The function 'SPAL_Thread_Join' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:184:0: style: The function 'TestAdd' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-stack.c:51:0: style: The function '__cyg_profile_func_enter' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-stack.c:67:0: style: The function '__cyg_profile_func_exit' is never used. [unusedFunction]
+
+^
+core/src/corelib_trace.c:49:0: style: The function '_psError' is never used. [unusedFunction]
+
+^
+core/src/corelib_trace.c:57:0: style: The function '_psErrorInt' is never used. [unusedFunction]
+
+^
+core/src/corelib_trace.c:65:0: style: The function '_psErrorStr' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/curve25519/scalarmult_curve25519.c:49:0: style: The function '_psSodium_crypto_scalarmult_curve25519_pick_best_implementation' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/osdep.c:615:0: style: The function '_psTracePtr' is never used. [unusedFunction]
+
+^
+crypto/keyformat/asn1.c:591:0: style: The function 'asnOidLenSegments' is never used. [unusedFunction]
+
+^
+crypto/keyformat/asn1.c:440:0: style: The function 'asnParseOid' is never used. [unusedFunction]
+
+^
+core/src/c_lib.c:102:0: style: The function 'c_strcat' is never used. [unusedFunction]
+
+^
+core/src/c_lib.c:85:0: style: The function 'c_strncmp' is never used. [unusedFunction]
+
+^
+core/src/c_lib.c:126:0: style: The function 'c_strstr' is never used. [unusedFunction]
+
+^
+core/src/c_lib.c:134:0: style: The function 'c_strtol' is never used. [unusedFunction]
+
+^
+core/src/c_lib.c:155:0: style: The function 'c_toupper' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:84:0: style: The function 'fail_at' is never used. [unusedFunction]
+
+^
+crypto/keyformat/asn1.c:276:0: style: The function 'getAsnEnumerated' is never used. [unusedFunction]
+
+^
+crypto/keyformat/asn1.c:39:0: style: The function 'getAsnTagLenUnsafe' is never used. [unusedFunction]
+
+^
+crypto/test/algorithmTest.c:7151:0: style: The function 'loadKeyPair' is never used. [unusedFunction]
+
+^
+crypto/test/algorithmTest.c:7171:0: style: The function 'loadKeyPub' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:797:0: style: The function 'matrixSslInteractBeginAccept' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:754:0: style: The function 'matrixSslInteractBeginConnected' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:700:0: style: The function 'matrixSslInteractClose' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:709:0: style: The function 'matrixSslInteractCloseErr' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:620:0: style: The function 'matrixSslInteractPeek' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:740:0: style: The function 'matrixSslInteractReceiveCloseNotify' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:689:0: style: The function 'matrixSslInteractRemoveFd' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:719:0: style: The function 'matrixSslInteractSendCloseNotify' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslNet.c:830:0: style: The function 'matrixSslInteractSetReadahead' is never used. [unusedFunction]
+
+^
+core/wrapper/wrap-malloc.c:17:0: style: The function 'myCalloc' is never used. [unusedFunction]
+
+^
+core/wrapper/wrap-malloc.c:12:0: style: The function 'myFree' is never used. [unusedFunction]
+
+^
+core/wrapper/wrap-malloc.c:6:0: style: The function 'myMalloc' is never used. [unusedFunction]
+
+^
+core/wrapper/wrap-malloc.c:24:0: style: The function 'myRealloc' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:119:0: style: The function 'ok_partial' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/osdep.c:494:0: style: The function 'osdepTraceClose' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/osdep.c:489:0: style: The function 'osdepTraceOpen' is never used. [unusedFunction]
+
+^
+crypto/symmetric/aesGCM.c:84:0: style: The function 'psAesClearGCM' is never used. [unusedFunction]
+
+^
+crypto/symmetric/aesGCM.c:243:0: style: The function 'psAesDecryptGCM' is never used. [unusedFunction]
+
+^
+crypto/symmetric/aesGCM.c:270:0: style: The function 'psAesDecryptGCM2' is never used. [unusedFunction]
+
+^
+crypto/symmetric/aesGCM.c:229:0: style: The function 'psAesDecryptGCMtagless' is never used. [unusedFunction]
+
+^
+crypto/symmetric/aesGCM.c:187:0: style: The function 'psAesEncryptGCM' is never used. [unusedFunction]
+
+^
+crypto/symmetric/aesGCM.c:65:0: style: The function 'psAesInitGCM' is never used. [unusedFunction]
+
+^
+crypto/symmetric/aesGCM.c:118:0: style: The function 'psAesReadyGCMRandomIV' is never used. [unusedFunction]
+
+^
+crypto/keyformat/asn1.c:572:0: style: The function 'psAsnWriteOid' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:149:0: style: The function 'psAsprnf_' is never used. [unusedFunction]
+
+^
+core/src/corelib_strings.c:393:0: style: The function 'psBinaryToHex' is never used. [unusedFunction]
+
+^
+core/src/corelib_date.c:273:0: style: The function 'psBrokenDownTimeStrTwoDigitYear' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:131:0: style: The function 'psBufAsHex' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:227:0: style: The function 'psBufCopyDataN' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:120:0: style: The function 'psBufEmptyFromPointerSize' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:87:0: style: The function 'psBufFromData' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:149:0: style: The function 'psBufGetMaxAppendSize' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:213:0: style: The function 'psBufNormalize' is never used. [unusedFunction]
+
+^
+crypto/keyformat/crl.c:110:0: style: The function 'psCRL_Insert' is never used. [unusedFunction]
+
+^
+crypto/keyformat/crl.c:182:0: style: The function 'psCRL_Remove' is never used. [unusedFunction]
+
+^
+crypto/keyformat/crl.c:218:0: style: The function 'psCRL_RemoveAll' is never used. [unusedFunction]
+
+^
+crypto/keyformat/crl.c:518:0: style: The function 'psCRL_isRevoked' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/osdep.c:127:0: style: The function 'psCompareTime' is never used. [unusedFunction]
+
+^
+crypto/keyformat/crl.c:66:0: style: The function 'psCrlClose' is never used. [unusedFunction]
+
+^
+crypto/keyformat/crl.c:57:0: style: The function 'psCrlOpen' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:20:0: style: The function 'psCrypto_onetimeauth_poly1305' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:58:0: style: The function 'psCrypto_onetimeauth_poly1305_bytes' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:51:0: style: The function 'psCrypto_onetimeauth_poly1305_final' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:36:0: style: The function 'psCrypto_onetimeauth_poly1305_init' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:64:0: style: The function 'psCrypto_onetimeauth_poly1305_keybytes' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:85:0: style: The function 'psCrypto_onetimeauth_poly1305_pick_best_implementation' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:70:0: style: The function 'psCrypto_onetimeauth_poly1305_statebytes' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:43:0: style: The function 'psCrypto_onetimeauth_poly1305_update' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/onetimeauth_poly1305.c:27:0: style: The function 'psCrypto_onetimeauth_poly1305_verify' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:45:0: style: The function 'psCrypto_stream_chacha20' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:52:0: style: The function 'psCrypto_stream_chacha20_ietf' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:35:0: style: The function 'psCrypto_stream_chacha20_ietf_keybytes' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:40:0: style: The function 'psCrypto_stream_chacha20_ietf_noncebytes' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:85:0: style: The function 'psCrypto_stream_chacha20_ietf_xor' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:68:0: style: The function 'psCrypto_stream_chacha20_ietf_xor_ic' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:25:0: style: The function 'psCrypto_stream_chacha20_keybytes' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:30:0: style: The function 'psCrypto_stream_chacha20_noncebytes' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:107:0: style: The function 'psCrypto_stream_chacha20_pick_best_implementation' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:77:0: style: The function 'psCrypto_stream_chacha20_xor' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/stream_chacha20.c:59:0: style: The function 'psCrypto_stream_chacha20_xor_ic' is never used. [unusedFunction]
+
+^
+crypto/symmetric/des3.c:1579:0: style: The function 'psDes3Decrypt' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:468:0: style: The function 'psDynBufAppendAsBigEndianUint16' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:478:0: style: The function 'psDynBufAppendAsBigEndianUint32' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:845:0: style: The function 'psDynBufAppendAsn1TagGen' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:860:0: style: The function 'psDynBufBeginConstructedTag' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:871:0: style: The function 'psDynBufEndConstructedTag' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:652:0: style: The function 'psDynBufSubInitAt' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ps_ed25519.c:45:0: style: The function 'psEd25519Sign' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:131:0: style: The function 'psFreeFRR' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:125:0: style: The function 'psFreeN' is never used. [unusedFunction]
+
+^
+crypto/common/alg_info.c:610:0: style: The function 'psGetNamedGroupId' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslSocket.c:486:0: style: The function 'psGetSocketFunctionsTLS' is never used. [unusedFunction]
+
+^
+core/src/psStat.c:529:0: style: The function 'psGetThreadStsUpdate' is never used. [unusedFunction]
+
+^
+core/src/psStat.c:562:0: style: The function 'psGetThreadStsUpdateEvent' is never used. [unusedFunction]
+
+^
+core/src/psStat.c:550:0: style: The function 'psGetThreadStsUpdateWait' is never used. [unusedFunction]
+
+^
+crypto/digest/hash.c:99:0: style: The function 'psHashFinal' is never used. [unusedFunction]
+
+^
+crypto/digest/hash.c:38:0: style: The function 'psHashInit' is never used. [unusedFunction]
+
+^
+crypto/digest/hash.c:71:0: style: The function 'psHashUpdate' is never used. [unusedFunction]
+
+^
+core/src/corelib_strings.c:354:0: style: The function 'psHexToBinary' is never used. [unusedFunction]
+
+^
+crypto/digest/hkdf.c:178:0: style: The function 'psHkdfExpandLabel' is never used. [unusedFunction]
+
+^
+crypto/digest/hkdf.c:142:0: style: The function 'psHkdfExtract' is never used. [unusedFunction]
+
+^
+crypto/digest/hmac.c:199:0: style: The function 'psHmacMd5' is never used. [unusedFunction]
+
+^
+crypto/digest/hmac.c:443:0: style: The function 'psHmacSha256' is never used. [unusedFunction]
+
+^
+crypto/digest/hmac.c:565:0: style: The function 'psHmacSha384' is never used. [unusedFunction]
+
+^
+crypto/digest/hmac.c:127:0: style: The function 'psHmacSingle' is never used. [unusedFunction]
+
+^
+crypto/common/alg_info.c:416:0: style: The function 'psIsEcdheGroup' is never used. [unusedFunction]
+
+^
+crypto/common/alg_info.c:571:0: style: The function 'psIsGroupSupported' is never used. [unusedFunction]
+
+^
+crypto/common/alg_info.c:256:0: style: The function 'psIsInsecureSigAlg' is never used. [unusedFunction]
+
+^
+crypto/common/alg_info.c:450:0: style: The function 'psIsSigAlgSupported' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:199:0: style: The function 'psLogfCallTrace' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:166:0: style: The function 'psLogfDebug' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:686:0: style: The function 'psLogfDisable' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:668:0: style: The function 'psLogfEnable' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:133:0: style: The function 'psLogfError' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:122:0: style: The function 'psLogfFatal' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:155:0: style: The function 'psLogfInfo' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:188:0: style: The function 'psLogfTrace' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:177:0: style: The function 'psLogfVerbose' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psLog.c:144:0: style: The function 'psLogfWarning' is never used. [unusedFunction]
+
+^
+crypto/digest/md5sha1.c:87:0: style: The function 'psMd5Sha1Final' is never used. [unusedFunction]
+
+^
+crypto/digest/md5sha1.c:50:0: style: The function 'psMd5Sha1Init' is never used. [unusedFunction]
+
+^
+crypto/digest/md5sha1.c:73:0: style: The function 'psMd5Sha1Update' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:66:0: style: The function 'psMemsetS' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:44:0: style: The function 'psMemsetSR' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:86:0: style: The function 'psMemsetSRR' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:76:0: style: The function 'psMemzeroS' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:55:0: style: The function 'psMemzeroSR' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:97:0: style: The function 'psMemzeroSRR' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:994:0: style: The function 'psParseBufCanGetTag' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1244:0: style: The function 'psParseBufCancel' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1119:0: style: The function 'psParseBufCopyAll' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1178:0: style: The function 'psParseBufCopyUntilByte' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1200:0: style: The function 'psParseBufEq' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1081:0: style: The function 'psParseBufReadTagRef' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1107:0: style: The function 'psParseBufSkipTag' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1095:0: style: The function 'psParseBufTrySkipTag' is never used. [unusedFunction]
+
+^
+core/src/psbuf.c:1349:0: style: The function 'psParseTlsVariableLengthVec' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:404:0: style: The function 'psPrnfBase64' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:180:0: style: The function 'psPrnfBool' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:106:0: style: The function 'psPrnfCopyDupFree' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:317:0: style: The function 'psPrnfDecPsFree' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:349:0: style: The function 'psPrnfHex2' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:296:0: style: The function 'psPrnfHexPsFree' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:390:0: style: The function 'psPrnfIpv4' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:230:0: style: The function 'psPrnfQStr' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:201:0: style: The function 'psPrnfSStr' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:127:0: style: The function 'psPrnf_' is never used. [unusedFunction]
+
+^
+crypto/pubkey/rsa_priv.c:291:0: style: The function 'psRsaPssSignHash' is never used. [unusedFunction]
+
+^
+crypto/pubkey/rsa_pub.c:339:0: style: The function 'psRsaPssVerify' is never used. [unusedFunction]
+
+^
+core/src/psprintf.c:625:0: style: The function 'psSbufprintf' is never used. [unusedFunction]
+
+^
+crypto/symmetric/seed.c:313:0: style: The function 'psSeedClear' is never used. [unusedFunction]
+
+^
+crypto/symmetric/seed.c:274:0: style: The function 'psSeedDecrypt' is never used. [unusedFunction]
+
+^
+crypto/symmetric/seed.c:241:0: style: The function 'psSeedEncrypt' is never used. [unusedFunction]
+
+^
+crypto/symmetric/seed.c:213:0: style: The function 'psSeedInit' is never used. [unusedFunction]
+
+^
+crypto/digest/sha256.c:400:0: style: The function 'psSha224Final' is never used. [unusedFunction]
+
+^
+crypto/digest/sha256.c:368:0: style: The function 'psSha224Init' is never used. [unusedFunction]
+
+^
+crypto/digest/sha256.c:393:0: style: The function 'psSha224Update' is never used. [unusedFunction]
+
+^
+crypto/digest/sha256_standalone.c:379:0: style: The function 'psSha256Standalone' is never used. [unusedFunction]
+
+^
+core/src/psprintf.c:675:0: style: The function 'psSnprintf' is never used. [unusedFunction]
+
+^
+core/osdep/POSIX/psPrnf.c:138:0: style: The function 'psSnprnf_' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:243:0: style: The function 'psSodium_add' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:293:0: style: The function 'psSodium_bin2hex' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:156:0: style: The function 'psSodium_compare' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/core_ed25519.c:22:0: style: The function 'psSodium_crypto_core_ed25519_add' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/core_ed25519.c:70:0: style: The function 'psSodium_crypto_core_ed25519_bytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/core_ed25519.c:62:0: style: The function 'psSodium_crypto_core_ed25519_from_uniform' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/core_ed25519.c:7:0: style: The function 'psSodium_crypto_core_ed25519_is_valid_point' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/core_ed25519.c:42:0: style: The function 'psSodium_crypto_core_ed25519_sub' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/core_ed25519.c:76:0: style: The function 'psSodium_crypto_core_ed25519_uniformbytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_scalarmult.c:17:0: style: The function 'psSodium_crypto_scalarmult' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_scalarmult.c:11:0: style: The function 'psSodium_crypto_scalarmult_base' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_scalarmult.c:24:0: style: The function 'psSodium_crypto_scalarmult_bytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/curve25519/scalarmult_curve25519.c:37:0: style: The function 'psSodium_crypto_scalarmult_curve25519_bytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/curve25519/sandy2x/fe51_invert.c:13:0: style: The function 'psSodium_crypto_scalarmult_curve25519_sandy2x_fe51_invert' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/curve25519/sandy2x/fe_frombytes_sandy2x.c:31:0: style: The function 'psSodium_crypto_scalarmult_curve25519_sandy2x_fe_frombytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/curve25519/scalarmult_curve25519.c:43:0: style: The function 'psSodium_crypto_scalarmult_curve25519_scalarbytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/ed25519/ref10/scalarmult_ed25519_ref10.c:32:0: style: The function 'psSodium_crypto_scalarmult_ed25519' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/ed25519/ref10/scalarmult_ed25519_ref10.c:57:0: style: The function 'psSodium_crypto_scalarmult_ed25519_base' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/ed25519/ref10/scalarmult_ed25519_ref10.c:77:0: style: The function 'psSodium_crypto_scalarmult_ed25519_bytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/ed25519/ref10/scalarmult_ed25519_ref10.c:83:0: style: The function 'psSodium_crypto_scalarmult_ed25519_scalarbytes' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_scalarmult.c:5:0: style: The function 'psSodium_crypto_scalarmult_primitive' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_scalarmult.c:30:0: style: The function 'psSodium_crypto_scalarmult_scalarbytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:54:0: style: The function 'psSodium_crypto_sign' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:5:0: style: The function 'psSodium_crypto_sign_bytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:70:0: style: The function 'psSodium_crypto_sign_detached' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/sign_ed25519.c:8:0: style: The function 'psSodium_crypto_sign_ed25519_bytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/sign_ed25519.c:32:0: style: The function 'psSodium_crypto_sign_ed25519_messagebytes_max' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/ref10/keypair.c:50:0: style: The function 'psSodium_crypto_sign_ed25519_pk_to_curve25519' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/sign_ed25519.c:20:0: style: The function 'psSodium_crypto_sign_ed25519_publickeybytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/sign_ed25519.c:26:0: style: The function 'psSodium_crypto_sign_ed25519_secretkeybytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/sign_ed25519.c:14:0: style: The function 'psSodium_crypto_sign_ed25519_seedbytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/ref10/keypair.c:74:0: style: The function 'psSodium_crypto_sign_ed25519_sk_to_curve25519' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/sign_ed25519.c:46:0: style: The function 'psSodium_crypto_sign_ed25519_sk_to_pk' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/ed25519/sign_ed25519.c:38:0: style: The function 'psSodium_crypto_sign_ed25519_sk_to_seed' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:48:0: style: The function 'psSodium_crypto_sign_keypair' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:29:0: style: The function 'psSodium_crypto_sign_messagebytes_max' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:62:0: style: The function 'psSodium_crypto_sign_open' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:35:0: style: The function 'psSodium_crypto_sign_primitive' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:17:0: style: The function 'psSodium_crypto_sign_publickeybytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:23:0: style: The function 'psSodium_crypto_sign_secretkeybytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:41:0: style: The function 'psSodium_crypto_sign_seed_keypair' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:11:0: style: The function 'psSodium_crypto_sign_seedbytes' is never used. [unusedFunction]
+
+^
+crypto/crypto_sign/crypto_sign.c:78:0: style: The function 'psSodium_crypto_sign_verify_detached' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/ref10/ed25519_ref10.c:448:0: style: The function 'psSodium_ge25519_p3_to_precomp' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:320:0: style: The function 'psSodium_hex2bin' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:196:0: style: The function 'psSodium_increment' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:400:0: style: The function 'psSodium_mlock' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:694:0: style: The function 'psSodium_mprotect_noaccess' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:700:0: style: The function 'psSodium_mprotect_readonly' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:706:0: style: The function 'psSodium_mprotect_readwrite' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/utils.c:416:0: style: The function 'psSodium_munlock' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:193:0: style: The function 'psSodium_runtime_get_cpu_features' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:253:0: style: The function 'psSodium_runtime_has_aesni' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:235:0: style: The function 'psSodium_runtime_has_avx' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:241:0: style: The function 'psSodium_runtime_has_avx2' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:205:0: style: The function 'psSodium_runtime_has_neon' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:247:0: style: The function 'psSodium_runtime_has_pclmul' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:217:0: style: The function 'psSodium_runtime_has_sse3' is never used. [unusedFunction]
+
+^
+crypto/aead/chacha20poly1305ietf/runtime.c:229:0: style: The function 'psSodium_runtime_has_sse41' is never used. [unusedFunction]
+
+^
+crypto/scalarmult/crypto_core/ed25519/ref10/ed25519_ref10.c:1881:0: style: The function 'psSodium_sc25519_is_canonical' is never used. [unusedFunction]
+
+^
+crypto/keyformat/x509.c:3327:0: style: The function 'psSprintAsnOid' is never used. [unusedFunction]
+
+^
+core/src/psStat.c:453:0: style: The function 'psStatDup' is never used. [unusedFunction]
+
+^
+core/src/psStat.c:447:0: style: The function 'psStatFree' is never used. [unusedFunction]
+
+^
+core/src/psStat.c:170:0: style: The function 'psStatPrintCompByteSeqResult' is never used. [unusedFunction]
+
+^
+core/src/psStat.c:278:0: style: The function 'psStatTest' is never used. [unusedFunction]
+
+^
+core/src/psUtil.c:106:0: style: The function 'psStrdupN' is never used. [unusedFunction]
+
+^
+core/src/corelib_strings.c:334:0: style: The function 'psToUtf16String' is never used. [unusedFunction]
+
+^
+core/src/corelib_strings.c:344:0: style: The function 'psToUtf32String' is never used. [unusedFunction]
+
+^
+crypto/common/alg_info.c:655:0: style: The function 'psVerifyNeedPreHash' is never used. [unusedFunction]
+
+^
+crypto/keyformat/x509.c:5966:0: style: The function 'psX509AuthenticateCert' is never used. [unusedFunction]
+
+^
+crypto/keyformat/crl.c:837:0: style: The function 'psX509GetCRLVersion' is never used. [unusedFunction]
+
+^
+crypto/keyformat/x509.c:591:0: style: The function 'psX509GetCertPublicKeyDer' is never used. [unusedFunction]
+
+^
+crypto/keyformat/x509.c:2133:0: style: The function 'psX509GetConcatenatedDomainComponent' is never used. [unusedFunction]
+
+^
+crypto/keyformat/x509.c:1955:0: style: The function 'psX509GetDNAttributeIndex' is never used. [unusedFunction]
+
+^
+crypto/keyformat/x509.c:239:0: style: The function 'psX509ParseCertData' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:251:0: style: The function 'pstm_clear_multi' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:2053:0: style: The function 'pstm_exptmod' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:2816:0: style: The function 'pstm_invmod' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:1289:0: style: The function 'pstm_mul_d' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:531:0: style: The function 'pstm_read_asn' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:1094:0: style: The function 'pstm_sub_d' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:2556:0: style: The function 'pstm_to_unsigned_bin_alloc' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:2474:0: style: The function 'pstm_to_unsigned_bin_nr' is never used. [unusedFunction]
+
+^
+crypto/math/pstm.c:708:0: style: The function 'pstm_unsigned_bin_size_nullsafe' is never used. [unusedFunction]
+
+^
+crypto/pubkey/rsa_pub.c:110:0: style: The function 'pubRsaDecryptSignedElement' is never used. [unusedFunction]
+
+^
+matrixssl/matrixsslSocket.c:258:0: style: The function 'setSocketTlsCertAuthCb' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:92:0: style: The function 'sfzcl_buffer_allocate' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:316:0: style: The function 'sfzcl_buffer_append_cstrs' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:189:0: style: The function 'sfzcl_buffer_clear' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:370:0: style: The function 'sfzcl_buffer_consume' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:385:0: style: The function 'sfzcl_buffer_consume_end' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:107:0: style: The function 'sfzcl_buffer_free' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:400:0: style: The function 'sfzcl_buffer_ptr' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:358:0: style: The function 'sfzcl_buffer_space' is never used. [unusedFunction]
+
+^
+core/src/sfzclbuffer.c:152:0: style: The function 'sfzcl_buffer_steal' is never used. [unusedFunction]
+
+^
+core/src/sfzclstr.c:2474:0: style: The function 'sfzcl_charset_convert_generic' is never used. [unusedFunction]
+
+^
+core/src/sfzclsnprintf.c:1001:0: style: The function 'sfzcl_dsprintf' is never used. [unusedFunction]
+
+^
+core/src/sfzclfastalloc.c:161:0: style: The function 'sfzcl_fastalloc_alloc' is never used. [unusedFunction]
+
+^
+core/src/sfzclfastalloc.c:167:0: style: The function 'sfzcl_fastalloc_free' is never used. [unusedFunction]
+
+^
+core/src/sfzclfastalloc.c:110:0: style: The function 'sfzcl_fastalloc_initialize' is never used. [unusedFunction]
+
+^
+core/src/sfzclfastalloc.c:139:0: style: The function 'sfzcl_fastalloc_uninitialize' is never used. [unusedFunction]
+
+^
+core/src/sfzclcalendar.c:413:0: style: The function 'sfzcl_make_time' is never used. [unusedFunction]
+
+^
+core/src/sfzclmemparser.c:235:0: style: The function 'sfzcl_memparser_accept_string' is never used. [unusedFunction]
+
+^
+core/src/sfzclmemparser.c:49:0: style: The function 'sfzcl_memparser_init_string' is never used. [unusedFunction]
+
+^
+core/src/sfzclmemparser.c:64:0: style: The function 'sfzcl_memparser_is_error' is never used. [unusedFunction]
+
+^
+core/src/sfzclmemparser.c:129:0: style: The function 'sfzcl_memparser_read_string' is never used. [unusedFunction]
+
+^
+core/src/sfzclmemparser.c:74:0: style: The function 'sfzcl_memparser_read_uinteger' is never used. [unusedFunction]
+
+^
+core/src/sfzclmemparser.c:58:0: style: The function 'sfzcl_memparser_remaining_length' is never used. [unusedFunction]
+
+^
+core/src/sfzclmemparser.c:195:0: style: The function 'sfzcl_memparser_skip_span' is never used. [unusedFunction]
+
+^
+core/src/sfzclobstack.c:306:0: style: The function 'sfzcl_obstack_alloc' is never used. [unusedFunction]
+
+^
+core/src/sfzclobstack.c:300:0: style: The function 'sfzcl_obstack_alloc_unaligned' is never used. [unusedFunction]
+
+^
+core/src/sfzclobstack.c:71:0: style: The function 'sfzcl_obstack_create' is never used. [unusedFunction]
+
+^
+core/src/sfzclobstack.c:131:0: style: The function 'sfzcl_obstack_destroy' is never used. [unusedFunction]
+
+^
+core/src/sfzclfileio.c:154:0: style: The function 'sfzcl_read_file' is never used. [unusedFunction]
+
+^
+core/src/sfzclfileio.c:208:0: style: The function 'sfzcl_read_file_base64' is never used. [unusedFunction]
+
+^
+core/src/sfzclfileio.c:349:0: style: The function 'sfzcl_read_gen_file' is never used. [unusedFunction]
+
+^
+core/src/sfzclcalendar.c:216:0: style: The function 'sfzcl_readable_time_string' is never used. [unusedFunction]
+
+^
+core/src/sfzclsnprintf.c:372:0: style: The function 'sfzcl_snprintf' is never used. [unusedFunction]
+
+^
+core/src/sfzclstr.c:1225:0: style: The function 'sfzcl_str_charset_get' is never used. [unusedFunction]
+
+^
+core/src/sfzclstr.c:2298:0: style: The function 'sfzcl_str_cmp' is never used. [unusedFunction]
+
+^
+core/src/sfzclstr.c:2187:0: style: The function 'sfzcl_str_dup' is never used. [unusedFunction]
+
+^
+core/src/sfzclstr.c:2403:0: style: The function 'sfzcl_str_get_canonical' is never used. [unusedFunction]
+
+^
+core/src/sfzcltimemeasure.c:85:0: style: The function 'sfzcl_time_measure_allocate' is never used. [unusedFunction]
+
+^
+core/src/sfzcltimemeasure.c:103:0: style: The function 'sfzcl_time_measure_free' is never used. [unusedFunction]
+
+^
+core/src/sfzcltimemeasure.c:233:0: style: The function 'sfzcl_time_measure_get' is never used. [unusedFunction]
+
+^
+core/src/sfzcltimemeasure.c:168:0: style: The function 'sfzcl_time_measure_reset' is never used. [unusedFunction]
+
+^
+core/src/sfzclcalendar.c:206:0: style: The function 'sfzcl_time_string' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:120:0: style: The function 'sfzutf_find_ptrsize_ext_by_address' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:131:0: style: The function 'sfzutf_find_ptrsize_ext_by_purpose' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf.c:142:0: style: The function 'sfzutf_loop_test_add_fname' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-perf.c:119:0: style: The function 'sfzutf_perf_test_begin' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-perf.c:151:0: style: The function 'sfzutf_perf_test_end' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:357:0: style: The function 'sfzutf_ptrsize_blank' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:397:0: style: The function 'sfzutf_ptrsize_cmp_ptrsize' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:375:0: style: The function 'sfzutf_ptrsize_fill_with_ptrsize' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:350:0: style: The function 'sfzutf_ptrsize_free' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:342:0: style: The function 'sfzutf_ptrsize_from_str' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf-utils.c:310:0: style: The function 'sfzutf_ptrsize_to_str' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf.c:88:0: style: The function 'sfzutf_suite_create' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf.c:160:0: style: The function 'sfzutf_tcase_add_fixture' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf.c:108:0: style: The function 'sfzutf_tcase_create' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf.c:128:0: style: The function 'sfzutf_test_add_fname' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf.c:40:0: style: The function 'sfzutf_unsupported_quick' is never used. [unusedFunction]
+
+^
+core/testsupp/src/sfzutf/sfzutf.c:47:0: style: The function 'sfzutf_unsupported_quick_process' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:70:0: style: The function 'test' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:306:0: style: The function 'testsupp_finish' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:279:0: style: The function 'testsupp_process' is never used. [unusedFunction]
+
+^
+core/testsupp/src/testsupp.c:153:0: style: The function 'testsupp_start_test_program' is never used. [unusedFunction]
+
+^
+crypto/keyformat/x509.c:1590:0: style: The function 'x509NewExtensions' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
